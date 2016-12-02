@@ -22,14 +22,11 @@
 
 @interface RootController ()
 
+
 @end
 
 @implementation RootController
 
-@property (strong, nonatomic) HomeViewController *homeViewController;
-@property (strong, nonatomic) InviteViewController *inviteViewController;
-@property (strong, nonatomic) EventViewController *eventViewController;
-@property (strong, nonatomic) UserViewController *userViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
