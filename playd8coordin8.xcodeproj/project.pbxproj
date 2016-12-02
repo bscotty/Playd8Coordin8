@@ -19,6 +19,7 @@
 		9373A6861DDFAB440081347B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9373A6841DDFAB440081347B /* LaunchScreen.storyboard */; };
 		9373A6911DDFAB450081347B /* playd8coordin8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A6901DDFAB450081347B /* playd8coordin8Tests.m */; };
 		9373A69C1DDFAB450081347B /* playd8coordin8UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A69B1DDFAB450081347B /* playd8coordin8UITests.m */; };
+		93CD24981DF212C4001A00D9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CD24971DF212C4001A00D9 /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		9373A6971DDFAB450081347B /* playd8coordin8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playd8coordin8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9373A69B1DDFAB450081347B /* playd8coordin8UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playd8coordin8UITests.m; sourceTree = "<group>"; };
 		9373A69D1DDFAB450081347B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93CD24961DF212C4001A00D9 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		93CD24971DF212C4001A00D9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		B401CE63A52116E30EA6B811 /* Pods-playd8coordin8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8Tests/Pods-playd8coordin8Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6FF0816AFA07E08F8EF50C0 /* Pods_playd8coordin8Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BD85456E843C13FDB5F442 /* Pods-playd8coordin8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8Tests/Pods-playd8coordin8Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */,
-				9373A6791DDFAB440081347B /* AppDelegate.h */,
-				9373A67A1DDFAB440081347B /* AppDelegate.m */,
+				93CD24961DF212C4001A00D9 /* Event.h */,
+				93CD24971DF212C4001A00D9 /* Event.m */,
 				9373A67C1DDFAB440081347B /* ViewController.h */,
 				9373A67D1DDFAB440081347B /* ViewController.m */,
 				9373A67F1DDFAB440081347B /* Main.storyboard */,
@@ -147,6 +150,8 @@
 		9373A6761DDFAB440081347B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9373A6791DDFAB440081347B /* AppDelegate.h */,
+				9373A67A1DDFAB440081347B /* AppDelegate.m */,
 				9373A6771DDFAB440081347B /* main.m */,
 			);
 			name = "Supporting Files";
@@ -464,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93CD24981DF212C4001A00D9 /* Event.m in Sources */,
 				9373A67E1DDFAB440081347B /* ViewController.m in Sources */,
 				9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */,
 				9373A6781DDFAB440081347B /* main.m in Sources */,
