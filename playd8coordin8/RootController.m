@@ -6,7 +6,13 @@
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RootController.h"
+
+//Views from tab bar
+#import "HomeViewController.h"
+#import "InviteViewController.h"
+#import "EventViewController.h"
+#import "UserViewController.h"
 
 // Add this to the header of your file, e.g. in ViewController.m
 // after #import "ViewController.h"
@@ -14,11 +20,16 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "Event.h"
 
-@interface ViewController ()
+@interface RootController ()
 
 @end
 
-@implementation ViewController
+@implementation RootController
+
+@property (strong, nonatomic) HomeViewController *homeViewController;
+@property (strong, nonatomic) InviteViewController *inviteViewController;
+@property (strong, nonatomic) EventViewController *eventViewController;
+@property (strong, nonatomic) UserViewController *userViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,5 +80,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction) switchViews:(id)sender{
+    
+}
 
 @end

@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		0AA12AD1E5245503DDA4A88B /* Pods_playd8coordin8Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FF0816AFA07E08F8EF50C0 /* Pods_playd8coordin8Tests.framework */; };
 		1FA38E867B08376E350A620E /* Pods_playd8coordin8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B90F9C74DC00D211A0B4364 /* Pods_playd8coordin8.framework */; };
+		2947BAD11DF21F4A001FA5AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD01DF21F4A001FA5AD /* HomeViewController.m */; };
+		2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD31DF21F64001FA5AD /* InviteViewController.m */; };
+		2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD61DF21F78001FA5AD /* EventViewController.m */; };
+		2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD91DF21F95001FA5AD /* UserViewController.m */; };
 		680E3F8DBF91D24840D14BD1 /* Pods_playd8coordin8UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A289CD4CBE8A1F22D227B6A /* Pods_playd8coordin8UITests.framework */; };
 		93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */; };
 		9373A6781DDFAB440081347B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A6771DDFAB440081347B /* main.m */; };
 		9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A67A1DDFAB440081347B /* AppDelegate.m */; };
-		9373A67E1DDFAB440081347B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A67D1DDFAB440081347B /* ViewController.m */; };
+		9373A67E1DDFAB440081347B /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A67D1DDFAB440081347B /* RootController.m */; };
 		9373A6811DDFAB440081347B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9373A67F1DDFAB440081347B /* Main.storyboard */; };
 		9373A6831DDFAB440081347B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9373A6821DDFAB440081347B /* Assets.xcassets */; };
 		9373A6861DDFAB440081347B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9373A6841DDFAB440081347B /* LaunchScreen.storyboard */; };
@@ -41,6 +45,14 @@
 
 /* Begin PBXFileReference section */
 		0B90F9C74DC00D211A0B4364 /* Pods_playd8coordin8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2947BACF1DF21F4A001FA5AD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		2947BAD01DF21F4A001FA5AD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		2947BAD21DF21F64001FA5AD /* InviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteViewController.h; sourceTree = "<group>"; };
+		2947BAD31DF21F64001FA5AD /* InviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteViewController.m; sourceTree = "<group>"; };
+		2947BAD51DF21F78001FA5AD /* EventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventViewController.h; sourceTree = "<group>"; };
+		2947BAD61DF21F78001FA5AD /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
+		2947BAD81DF21F95001FA5AD /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		2947BAD91DF21F95001FA5AD /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		4A289CD4CBE8A1F22D227B6A /* Pods_playd8coordin8UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DEF42DA1AF4AE25545FFAC /* Pods-playd8coordin8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8.release.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8/Pods-playd8coordin8.release.xcconfig"; sourceTree = "<group>"; };
 		598C148CE9FBD6B114E07546 /* Pods-playd8coordin8UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8UITests/Pods-playd8coordin8UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -51,8 +63,8 @@
 		9373A6771DDFAB440081347B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9373A6791DDFAB440081347B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9373A67A1DDFAB440081347B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9373A67C1DDFAB440081347B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9373A67D1DDFAB440081347B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9373A67C1DDFAB440081347B /* RootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
+		9373A67D1DDFAB440081347B /* RootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
 		9373A6801DDFAB440081347B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9373A6821DDFAB440081347B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9373A6851DDFAB440081347B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -136,13 +148,21 @@
 				93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */,
 				93CD24961DF212C4001A00D9 /* Event.h */,
 				93CD24971DF212C4001A00D9 /* Event.m */,
-				9373A67C1DDFAB440081347B /* ViewController.h */,
-				9373A67D1DDFAB440081347B /* ViewController.m */,
+				9373A67C1DDFAB440081347B /* RootController.h */,
+				9373A67D1DDFAB440081347B /* RootController.m */,
 				9373A67F1DDFAB440081347B /* Main.storyboard */,
 				9373A6821DDFAB440081347B /* Assets.xcassets */,
 				9373A6841DDFAB440081347B /* LaunchScreen.storyboard */,
 				9373A6871DDFAB440081347B /* Info.plist */,
 				9373A6761DDFAB440081347B /* Supporting Files */,
+				2947BACF1DF21F4A001FA5AD /* HomeViewController.h */,
+				2947BAD01DF21F4A001FA5AD /* HomeViewController.m */,
+				2947BAD21DF21F64001FA5AD /* InviteViewController.h */,
+				2947BAD31DF21F64001FA5AD /* InviteViewController.m */,
+				2947BAD51DF21F78001FA5AD /* EventViewController.h */,
+				2947BAD61DF21F78001FA5AD /* EventViewController.m */,
+				2947BAD81DF21F95001FA5AD /* UserViewController.h */,
+				2947BAD91DF21F95001FA5AD /* UserViewController.m */,
 			);
 			path = playd8coordin8;
 			sourceTree = "<group>";
@@ -470,8 +490,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93CD24981DF212C4001A00D9 /* Event.m in Sources */,
-				9373A67E1DDFAB440081347B /* ViewController.m in Sources */,
+				2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */,
+				9373A67E1DDFAB440081347B /* RootController.m in Sources */,
+				2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */,
 				9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */,
+				2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */,
+				2947BAD11DF21F4A001FA5AD /* HomeViewController.m in Sources */,
 				9373A6781DDFAB440081347B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

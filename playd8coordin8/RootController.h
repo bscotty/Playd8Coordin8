@@ -10,7 +10,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "Firebase.h"
 
-@interface ViewController : UIViewController
+@interface RootController : UIViewController
 
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
 @property (strong, nonatomic) FIRDatabaseReference *ref;
