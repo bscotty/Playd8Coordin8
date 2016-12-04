@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import "Firebase.h"
 #import "HomeViewController.h"
 #import "InviteViewController.h"
 #import "EventViewController.h"
@@ -16,8 +14,6 @@
 
 @interface RootController : UIViewController
 
-@property (weak, nonatomic) IBOutlet FBSDKLoginButton *loginButton;
-@property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) HomeViewController *homeViewController;
 @property (strong, nonatomic) InviteViewController *inviteViewController;
 @property (strong, nonatomic) EventViewController *eventViewController;
