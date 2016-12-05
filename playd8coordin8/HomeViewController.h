@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@import Firebase;
 
 @interface HomeViewController : UIViewController
 
-@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end
