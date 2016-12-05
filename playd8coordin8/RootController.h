@@ -12,7 +12,7 @@
 #import "EventViewController.h"
 #import "UserViewController.h"
 
-@interface RootController : UIViewController
+@interface RootController : UITabBarController
 
 @property (strong, nonatomic) HomeViewController *homeViewController;
 @property (strong, nonatomic) InviteViewController *inviteViewController;
