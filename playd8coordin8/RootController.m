@@ -19,7 +19,6 @@
 #import "Event.h"
 
 
-
 @interface RootController ()
 
 
@@ -30,24 +29,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"ROOT CONTROLLER VIEWDIDLOAD. SEARCHING FOR VIEW CONTROLLERS.");
+    NSLog(@"PD8 ROOT CONTROLLER VIEWDIDLOAD. SEARCHING FOR VIEW CONTROLLERS.");
+    // Get our View Controllers and associate them with the right types.
     for (UIViewController *v in self.viewControllers) {
         UIViewController *vc = v;
         // Get the View Controllers.
         if ([vc isKindOfClass:[HomeViewController class]]) {
             self.homeViewController = (HomeViewController*) vc;
-            NSLog(@"HOME VIEW CONTROLLER FOUND");
+            NSLog(@"PD8 HOME VIEW CONTROLLER FOUND");
         } else if ([vc isKindOfClass:[InviteViewController class]]) {
             self.inviteViewController = (InviteViewController*) vc;
-            NSLog(@"INVITE VIEW CONTROLLER FOUND");
+            NSLog(@"PD8 INVITE VIEW CONTROLLER FOUND");
         } else if ([vc isKindOfClass:[EventViewController class]]) {
             self.eventViewController = (EventViewController*) vc;
-            NSLog(@"EVENT VIEW CONTROLLER FOUND");
+            NSLog(@"PD8 EVENT VIEW CONTROLLER FOUND");
         } else if ([vc isKindOfClass:[UserViewController class]]) {
             self.userViewController = (UserViewController*) vc;
-            NSLog(@"USER VIEW CONTROLLER FOUND");
+            NSLog(@"PD8 USER VIEW CONTROLLER FOUND");
         }
     }
+    
+    
+    // Get our database reference.
+    self.ref = [[FIRDatabase database] reference];
+    FIRDatabaseReference *events = [_ref child:@"events"];
+    
+    NSLog(@"PD8 We made it past the references and are waiting on the observation event.");
+    
+    [events observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        NSLog(@"PD8 OBSERVING DATABASE");
+        for(FIRDataSnapshot* child in snapshot.children) {
+            NSLog(@"PD8 CHILD FOUND");
+            // child = event object in database.
+            Event *e = [[Event alloc] init];
+            
+            // Get the date, time, and location.
+            [e setDate:[[child childSnapshotForPath:@"date"] value]];
+            [e setTime:[[child childSnapshotForPath:@"time"] value]];
+            [e setLocation:[[child childSnapshotForPath:@"location"] value]];
+            
+            // Get the guests.
+            for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
+                [[e guests] addObject:guest.value];
+            }
+            [self.eventList addObject:e];
+            
+        }
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"PD8 OBSERVE ERROR");
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +86,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Do these do things??? Can they????
 -(IBAction) switchToInviteView:(id)sender{
     self.inviteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Invite"];
     self.inviteViewController.view.frame = self.view.frame;
