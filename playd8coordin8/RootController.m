@@ -30,9 +30,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.homeViewController = [self.storyboard instantiateViewControllerWithIdentifier: @"Home"];
-    self.homeViewController.view.frame = self.view.frame;
-    [self presentViewController:self.homeViewController animated:YES completion:nil];
+    NSLog(@"ROOT CONTROLLER VIEWDIDLOAD. SEARCHING FOR VIEW CONTROLLERS.");
+    for (UIViewController *v in self.viewControllers) {
+        UIViewController *vc = v;
+        // Get the View Controllers.
+        if ([vc isKindOfClass:[HomeViewController class]]) {
+            self.homeViewController = (HomeViewController*) vc;
+            NSLog(@"HOME VIEW CONTROLLER FOUND");
+        } else if ([vc isKindOfClass:[InviteViewController class]]) {
+            self.inviteViewController = (InviteViewController*) vc;
+            NSLog(@"INVITE VIEW CONTROLLER FOUND");
+        } else if ([vc isKindOfClass:[EventViewController class]]) {
+            self.eventViewController = (EventViewController*) vc;
+            NSLog(@"EVENT VIEW CONTROLLER FOUND");
+        } else if ([vc isKindOfClass:[UserViewController class]]) {
+            self.userViewController = (UserViewController*) vc;
+            NSLog(@"USER VIEW CONTROLLER FOUND");
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
