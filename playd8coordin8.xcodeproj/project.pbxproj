@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0AA12AD1E5245503DDA4A88B /* Pods_playd8coordin8Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FF0816AFA07E08F8EF50C0 /* Pods_playd8coordin8Tests.framework */; };
 		1FA38E867B08376E350A620E /* Pods_playd8coordin8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B90F9C74DC00D211A0B4364 /* Pods_playd8coordin8.framework */; };
-		2911D75A1DF6267300C1B517 /* playd8coordin8opt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2911D7591DF6267300C1B517 /* playd8coordin8opt1.png */; };
 		2947BAD11DF21F4A001FA5AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD01DF21F4A001FA5AD /* HomeViewController.m */; };
 		2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD31DF21F64001FA5AD /* InviteViewController.m */; };
 		2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD61DF21F78001FA5AD /* EventViewController.m */; };
@@ -46,7 +45,6 @@
 
 /* Begin PBXFileReference section */
 		0B90F9C74DC00D211A0B4364 /* Pods_playd8coordin8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2911D7591DF6267300C1B517 /* playd8coordin8opt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playd8coordin8opt1.png; path = ../../../../playd8coordin8opt1.png; sourceTree = "<group>"; };
 		2947BACF1DF21F4A001FA5AD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2947BAD01DF21F4A001FA5AD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2947BAD21DF21F64001FA5AD /* InviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteViewController.h; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 		9373A6751DDFAB440081347B /* playd8coordin8 */ = {
 			isa = PBXGroup;
 			children = (
-				2911D7591DF6267300C1B517 /* playd8coordin8opt1.png */,
 				9314C6991DF49EEE00408089 /* playd8coordin8.entitlements */,
 				93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */,
 				93CD24961DF212C4001A00D9 /* Event.h */,
@@ -336,7 +333,6 @@
 				9373A6861DDFAB440081347B /* LaunchScreen.storyboard in Resources */,
 				9373A6831DDFAB440081347B /* Assets.xcassets in Resources */,
 				9373A6811DDFAB440081347B /* Main.storyboard in Resources */,
-				2911D75A1DF6267300C1B517 /* playd8coordin8opt1.png in Resources */,
 				93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
