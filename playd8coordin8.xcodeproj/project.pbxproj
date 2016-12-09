@@ -23,6 +23,7 @@
 		9373A6861DDFAB440081347B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9373A6841DDFAB440081347B /* LaunchScreen.storyboard */; };
 		9373A6911DDFAB450081347B /* playd8coordin8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A6901DDFAB450081347B /* playd8coordin8Tests.m */; };
 		9373A69C1DDFAB450081347B /* playd8coordin8UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A69B1DDFAB450081347B /* playd8coordin8UITests.m */; };
+		938881391DF8B4AA00DCECE3 /* EventMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */; };
 		93CD24981DF212C4001A00D9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CD24971DF212C4001A00D9 /* Event.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		9373A6971DDFAB450081347B /* playd8coordin8UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playd8coordin8UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9373A69B1DDFAB450081347B /* playd8coordin8UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = playd8coordin8UITests.m; sourceTree = "<group>"; };
 		9373A69D1DDFAB450081347B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		938881371DF8B4AA00DCECE3 /* EventMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventMakerViewController.h; sourceTree = "<group>"; };
+		938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMakerViewController.m; sourceTree = "<group>"; };
 		93CD24961DF212C4001A00D9 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		93CD24971DF212C4001A00D9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		B401CE63A52116E30EA6B811 /* Pods-playd8coordin8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8Tests/Pods-playd8coordin8Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				2947BAD61DF21F78001FA5AD /* EventViewController.m */,
 				2947BAD81DF21F95001FA5AD /* UserViewController.h */,
 				2947BAD91DF21F95001FA5AD /* UserViewController.m */,
+				938881371DF8B4AA00DCECE3 /* EventMakerViewController.h */,
+				938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */,
 			);
 			path = playd8coordin8;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 			files = (
 				93CD24981DF212C4001A00D9 /* Event.m in Sources */,
 				2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */,
+				938881391DF8B4AA00DCECE3 /* EventMakerViewController.m in Sources */,
 				9373A67E1DDFAB440081347B /* RootController.m in Sources */,
 				2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */,
 				9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */,

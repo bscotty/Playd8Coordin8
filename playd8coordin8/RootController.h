@@ -11,6 +11,7 @@
 #import "InviteViewController.h"
 #import "EventViewController.h"
 #import "UserViewController.h"
+#import "Event.h"
 
 @import Firebase;
 
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) EventViewController *eventViewController;
 @property (strong, nonatomic) UserViewController *userViewController;
 
+- (void) updateFirebaseWithEvent:(Event*)event;
 
 @end
 
