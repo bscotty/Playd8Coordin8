@@ -21,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //load an array with 3> upcoming events and "your" events from database into array
-    self.upcomingEvents = @[];
-    self.yourEvents = @[];
     
 }
 
@@ -33,7 +31,7 @@
 
 -(NSInteger)tableView: (UITableView *)tableView
 numberOfRowsInSection:(NSInteger)section{
-    return 0;
+    return 3;
 }
 
 -(UITableViewCell *)tableView: (UITableView *)tableView
@@ -45,7 +43,8 @@ numberOfRowsInSection:(NSInteger)section{
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:SimpleTableIdentifier];
     }
-    cell.textLabel.text = self.upcomingEvents[indexPath.row];
+    
+    cell.textLabel.text = self.pendingInvites[indexPath.row];
     return cell;
 }
 

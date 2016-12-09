@@ -83,7 +83,17 @@
         NSLog(@"%@", error.localizedDescription);
     }];
     
-   
+    for(Event *event in _eventList){
+        if([[event isAttending] isEqual: @YES]){
+            if([_homeViewController.committedEvents count] < 3){
+             [_homeViewController.committedEvents addObject: event];
+            }
+        }else{
+            if([_homeViewController.pendingInvites count] < 3){
+             [_homeViewController.pendingInvites addObject: event];
+            }
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

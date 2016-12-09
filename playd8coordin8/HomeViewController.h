@@ -11,6 +11,6 @@
 @interface HomeViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UITableView *upcomingTableView;
 @property (nonatomic, weak) IBOutlet UITableView *yourTableView;
-@property (copy, nonatomic) NSArray *upcomingEvents;
-@property (copy, nonatomic) NSArray *yourEvents;
+@property (copy, nonatomic) NSMutableArray *committedEvents; //goes into upcoming table view ( I know this is super confusing, sorry)
+@property (copy, nonatomic) NSMutableArray *pendingInvites; //goes into your table view
 @end
