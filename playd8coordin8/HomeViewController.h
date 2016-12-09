@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
-
-
+@property (nonatomic, weak) IBOutlet UITableView *upcomingTableView;
+@property (nonatomic, weak) IBOutlet UITableView *yourTableView;
+@property (copy, nonatomic) NSArray *upcomingEvents;
+@property (copy, nonatomic) NSArray *yourEvents;
 @end

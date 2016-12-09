@@ -79,6 +79,8 @@
         NSLog(@"PD8 OBSERVE ERROR");
         NSLog(@"%@", error.localizedDescription);
     }];
+    
+   
 }
 
 - (void)didReceiveMemoryWarning {
