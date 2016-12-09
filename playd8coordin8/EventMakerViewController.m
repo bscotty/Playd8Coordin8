@@ -9,6 +9,8 @@
 #import "EventMakerViewController.h"
 #import "Event.h"
 
+@import Firebase;
+
 @interface EventMakerViewController ()
 
 @end
@@ -40,12 +42,23 @@
     [e setLocation:location];
     [e addGuest:guest];
     [e setIsAttending:@YES];
+   
+    // Puts the Event object onto Firebase.
+    FIRDatabaseReference *ref = [[FIRDatabase database] reference];
+    FIRDatabaseReference *events = [ref child:@"events"];
+        
+    NSString* eventKey = [[events childByAutoId] key];
+    [[events child:eventKey] setValue:e.time forKey:@"time"];
+    [[events child:eventKey] setValue:e.date forKey:@"date"];
+    [[events child:eventKey] setValue:e.location forKey:@"location"];
+    [[events child:eventKey] setValue:e.isAttending forKey:@"attending"];
     
-    //TODO: This doesn't work! Find another way!
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 - (IBAction)cancelEventCreation:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES
+                            completion:nil];
 }
 
 

@@ -14,9 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *timeField;
 @property (weak, nonatomic) IBOutlet UITextField *locationField;
 @property (weak, nonatomic) IBOutlet UITextField *guestField; // TODO: Fix this better for more than one guest, probably
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+- (IBAction)cancelEventCreation:(id)sender;
 - (IBAction)createEvent:(id)sender;
 
 @end

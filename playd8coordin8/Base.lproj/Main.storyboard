@@ -232,7 +232,7 @@
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="createEvent:" destination="id5-9A-ddm" eventType="touchUpInside" id="Mj1-38-fhD"/>
+                                    <action selector="createEvent:" destination="id5-9A-ddm" eventType="touchUpInside" id="Yte-x5-E8H"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyq-MS-It9">
@@ -240,7 +240,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="&lt;--"/>
                                 <connections>
-                                    <action selector="cancelEventCreation:" destination="id5-9A-ddm" eventType="touchUpInside" id="7Qw-AK-7n3"/>
+                                    <action selector="cancelEventCreation:" destination="id5-9A-ddm" eventType="touchUpInside" id="ehW-uP-gg5"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This UI is very bad and also a placeholder so don't judge it too harshly it's doing its job just right." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ogN-aa-hc9">
@@ -254,12 +254,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="qyq-MS-It9" id="zHF-oZ-UpX"/>
-                        <outlet property="dateField" destination="7bb-IU-Rx6" id="HEw-ml-pAT"/>
-                        <outlet property="guestField" destination="2qu-KF-RiM" id="LOr-vS-HK2"/>
-                        <outlet property="locationField" destination="Mxm-63-Cmh" id="B1y-1L-39a"/>
-                        <outlet property="saveButton" destination="vH3-uk-zQa" id="urX-1z-ifq"/>
-                        <outlet property="timeField" destination="894-u1-Lfz" id="Yo2-o4-gM5"/>
+                        <outlet property="dateField" destination="7bb-IU-Rx6" id="qAb-sr-WZR"/>
+                        <outlet property="guestField" destination="2qu-KF-RiM" id="eBs-Qp-iOU"/>
+                        <outlet property="locationField" destination="Mxm-63-Cmh" id="H3c-jE-w4c"/>
+                        <outlet property="timeField" destination="894-u1-Lfz" id="DxR-OC-9eA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqj-lV-MvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
