@@ -46,15 +46,37 @@
     // Puts the Event object onto Firebase.
     FIRDatabaseReference *ref = [[FIRDatabase database] reference];
     FIRDatabaseReference *events = [ref child:@"events"];
-        
-    NSString* eventKey = [[events childByAutoId] key];
-    [[events child:eventKey] setValue:e.time forKey:@"time"];
-    [[events child:eventKey] setValue:e.date forKey:@"date"];
-    [[events child:eventKey] setValue:e.location forKey:@"location"];
-    [[events child:eventKey] setValue:e.isAttending forKey:@"attending"];
     
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    NSString *key = [events childByAutoId].key;
+
+    NSDictionary *post = @{@"attending:": e.isAttending,
+                                 @"time": e.time,
+                                 @"date": e.date,
+                             @"location": e.location,
+                               @"guests": e.guests};
+    
+    NSDictionary *childUpdates = @{[@"/events/" stringByAppendingString:key]: post};
+    [ref updateChildValues:childUpdates];
+    
+    _timeField.text = @"Time";
+    _dateField.text = @"Date";
+    _locationField.text = @"Location";
+    _guestField.text = @"Guest";
+    
+    UIAlertController* alert = [UIAlertController
+                                alertControllerWithTitle:@"My Alert"
+                                                 message:@"Your event has been created."
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction =
+                    [UIAlertAction actionWithTitle:@"OK"
+                                             style:UIAlertActionStyleDefault
+                                           handler:^(UIAlertAction * action) {[self
+                     dismissViewControllerAnimated:YES
+                                        completion:nil];}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)cancelEventCreation:(id)sender {
     [self dismissViewControllerAnimated:YES
