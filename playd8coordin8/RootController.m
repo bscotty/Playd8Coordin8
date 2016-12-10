@@ -94,6 +94,7 @@
             }
             [_inviteViewController.invites addObject: event];
         }
+        [_eventViewController.events addObject:event];
     }
 }
 
