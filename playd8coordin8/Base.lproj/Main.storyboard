@@ -57,7 +57,7 @@
         <!--Login View Controller-->
         <scene sceneID="iSj-M3-ZXx">
             <objects>
-                <viewController id="G0O-0V-0eB" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="G0O-0V-0eB" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IEk-3x-NK6"/>
                         <viewControllerLayoutGuide type="bottom" id="xJP-1t-bxp"/>

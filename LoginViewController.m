@@ -6,9 +6,10 @@
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "RootController.h"
-#import "AppDelegate.h"
+#import "SignInViewController.h"
 
 @import Firebase;
 @import FirebaseAuthUI;
@@ -45,6 +46,7 @@
         authUI.providers = providers;
         
         UINavigationController *authViewController = [authUI authViewController];
+        [authViewController.view setBackgroundColor:[UIColor clearColor]];
         [self presentViewController:authViewController
                            animated:true
                          completion:^(void){
@@ -55,15 +57,11 @@
         _hasLaunchedAlredy = YES;
     } else {
         NSLog(@"PD8 Login already complete, segueing to main activity.");
+        
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
         appDelegate.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
         RootController *rc = [storyboard instantiateViewControllerWithIdentifier:@"Root"];
-        // determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
-        
         appDelegate.window.rootViewController = rc;
         [appDelegate.window makeKeyAndVisible];
     }
@@ -84,6 +82,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Objective-C
+- (FUIAuthPickerViewController *)authPickerViewControllerForAuthUI:(FUIAuth *)authUI {
+    return [[SignInViewController alloc] initWithAuthUI:authUI];
 }
 
 /*

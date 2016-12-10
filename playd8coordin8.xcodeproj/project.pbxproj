@@ -14,6 +14,9 @@
 		2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD61DF21F78001FA5AD /* EventViewController.m */; };
 		2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD91DF21F95001FA5AD /* UserViewController.m */; };
 		680E3F8DBF91D24840D14BD1 /* Pods_playd8coordin8UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A289CD4CBE8A1F22D227B6A /* Pods_playd8coordin8UITests.framework */; };
+		9366DFA91DFCBBD200827286 /* playd8coordin8opt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */; };
+		9366DFAF1DFCC41200827286 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366DFAE1DFCC41200827286 /* SignInViewController.m */; };
+		9366DFB11DFCC69F00827286 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9366DFB01DFCC69F00827286 /* SignInViewController.xib */; };
 		93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */; };
 		9373A6781DDFAB440081347B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A6771DDFAB440081347B /* main.m */; };
 		9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A67A1DDFAB440081347B /* AppDelegate.m */; };
@@ -61,6 +64,10 @@
 		5E159F00A7DCE9DD4433DE60 /* Pods-playd8coordin8UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8UITests/Pods-playd8coordin8UITests.release.xcconfig"; sourceTree = "<group>"; };
 		85F557921F1328015768CCBB /* Pods-playd8coordin8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8/Pods-playd8coordin8.debug.xcconfig"; sourceTree = "<group>"; };
 		9314C6991DF49EEE00408089 /* playd8coordin8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = playd8coordin8.entitlements; sourceTree = "<group>"; };
+		9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playd8coordin8opt1.png; sourceTree = "<group>"; };
+		9366DFAD1DFCC41200827286 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		9366DFAE1DFCC41200827286 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		9366DFB01DFCC69F00827286 /* SignInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignInViewController.xib; sourceTree = "<group>"; };
 		93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9373A6731DDFAB440081347B /* playd8coordin8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = playd8coordin8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9373A6771DDFAB440081347B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -190,9 +197,13 @@
 		9373A6761DDFAB440081347B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */,
 				9373A6791DDFAB440081347B /* AppDelegate.h */,
 				9373A67A1DDFAB440081347B /* AppDelegate.m */,
 				9373A6771DDFAB440081347B /* main.m */,
+				9366DFAD1DFCC41200827286 /* SignInViewController.h */,
+				9366DFAE1DFCC41200827286 /* SignInViewController.m */,
+				9366DFB01DFCC69F00827286 /* SignInViewController.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -351,6 +362,8 @@
 				9373A6861DDFAB440081347B /* LaunchScreen.storyboard in Resources */,
 				9373A6831DDFAB440081347B /* Assets.xcassets in Resources */,
 				9373A6811DDFAB440081347B /* Main.storyboard in Resources */,
+				9366DFA91DFCBBD200827286 /* playd8coordin8opt1.png in Resources */,
+				9366DFB11DFCC69F00827286 /* SignInViewController.xib in Resources */,
 				93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +531,7 @@
 				2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */,
 				938881391DF8B4AA00DCECE3 /* EventMakerViewController.m in Sources */,
 				9373A67E1DDFAB440081347B /* RootController.m in Sources */,
+				9366DFAF1DFCC41200827286 /* SignInViewController.m in Sources */,
 				93D6A4DC1DFC97880058A5C5 /* LoginViewController.m in Sources */,
 				2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */,
 				9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */,
