@@ -24,6 +24,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)tableView: (UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section{
+    return [self.events count];
+}
+
+-(UITableViewCell *)tableView: (UITableView *)tableView
+        cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault
+                reuseIdentifier:SimpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = self.events[indexPath.row];
+    return cell;
+}
+
 /*
 #pragma mark - Navigation
 

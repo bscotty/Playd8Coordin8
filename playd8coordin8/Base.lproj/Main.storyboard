@@ -33,14 +33,26 @@
                                 <color key="textColor" red="0.32156862749999998" green="0.28235294119999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-dV-TH1">
+                                <frame key="frameInset" minX="16" minY="71" width="343" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nna-NL-u75" id="G1T-ve-sev"/>
+                                    <outlet property="delegate" destination="Nna-NL-u75" id="EHk-f0-4c5"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Invites" image="ic_email_24.png" id="5Pe-bv-55a"/>
+                    <connections>
+                        <outlet property="inviteTable" destination="dUd-dV-TH1" id="6Ch-eY-2D0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIf-YG-oz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442" y="-239"/>
+            <point key="canvasLocation" x="1440.8" y="-239.73013493253376"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="iSj-M3-ZXx">
@@ -87,14 +99,59 @@
                                 <color key="textColor" red="0.32156862745098036" green="0.28235294117647058" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nQ6-ba-qer">
+                                <frame key="frameInset" minX="36" minY="168" width="303" height="181"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="chf-qK-baF" id="weo-Yz-e65"/>
+                                    <outlet property="delegate" destination="chf-qK-baF" id="n4E-XJ-9oc"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Committed Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6v-M5-QC6">
+                                <frame key="frameInset" minX="36" minY="136" width="303" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156862745098036" green="0.28235294117647058" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="19"/>
+                                <color key="textColor" red="0.70588235294117641" green="0.67843137254901964" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yZ4-eG-VWi">
+                                <frame key="frameInset" minX="36" minY="401" width="303" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="chf-qK-baF" id="h0B-v7-Dys"/>
+                                    <outlet property="delegate" destination="chf-qK-baF" id="VQo-76-8i6"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pending Invites" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnJ-s0-yov">
+                                <frame key="frameInset" minX="36" minY="375" width="303" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.28235294119999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="19"/>
+                                <color key="textColor" red="0.70588235290000001" green="0.67843137249999996" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's happening?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-Yp-JcW">
+                                <frame key="frameInset" minX="46" minY="81" width="282" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="23"/>
+                                <color key="textColor" red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="domain.png" id="TMO-V8-lkR"/>
+                    <connections>
+                        <outlet property="upcomingTableView" destination="nQ6-ba-qer" id="1uy-Jq-VXI"/>
+                        <outlet property="yourTableView" destination="yZ4-eG-VWi" id="Y4u-qL-8Ka"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN0-xg-6bN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="685.60000000000002" y="-238.83058470764618"/>
+            <point key="canvasLocation" x="496.80000000000001" y="-600.44977511244383"/>
         </scene>
         <!--Events-->
         <scene sceneID="nY6-F8-T1h">
@@ -123,10 +180,22 @@
                                 <color key="textColor" red="0.32156862749999998" green="0.28235294119999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OAH-4R-eJ1">
+                                <frame key="frameInset" minX="16" minY="71" width="343" height="539"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="00m-JQ-lXd" id="dvk-82-Pip"/>
+                                    <outlet property="delegate" destination="00m-JQ-lXd" id="CXB-IS-nFr"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="ic_checkmark_black_24.png" id="fna-aZ-RL9" userLabel="Item 3"/>
+                    <connections>
+                        <outlet property="eventsTableView" destination="OAH-4R-eJ1" id="XjB-Sj-sQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jM0-Yh-sga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
