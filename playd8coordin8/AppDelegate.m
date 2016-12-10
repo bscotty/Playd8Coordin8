@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-@import Firebase;
+@import FirebaseAuthUI;
 
 @interface AppDelegate ()
 
@@ -18,8 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [FIRApp configure];
     return YES;
+}
+
+// Handle the URL that we receive at the end of the Google/Facebook authentication process.
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
+    NSLog(@"PD8 OpenURL Accepted, Logging in...");
+    
+    NSString *sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
+    return [[FUIAuth defaultAuthUI] handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 

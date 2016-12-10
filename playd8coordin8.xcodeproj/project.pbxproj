@@ -25,6 +25,7 @@
 		9373A69C1DDFAB450081347B /* playd8coordin8UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A69B1DDFAB450081347B /* playd8coordin8UITests.m */; };
 		938881391DF8B4AA00DCECE3 /* EventMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */; };
 		93CD24981DF212C4001A00D9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CD24971DF212C4001A00D9 /* Event.m */; };
+		93D6A4DC1DFC97880058A5C5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D6A4DB1DFC97880058A5C5 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMakerViewController.m; sourceTree = "<group>"; };
 		93CD24961DF212C4001A00D9 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		93CD24971DF212C4001A00D9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		93D6A4DA1DFC97880058A5C5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		93D6A4DB1DFC97880058A5C5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		B401CE63A52116E30EA6B811 /* Pods-playd8coordin8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8Tests/Pods-playd8coordin8Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6FF0816AFA07E08F8EF50C0 /* Pods_playd8coordin8Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BD85456E843C13FDB5F442 /* Pods-playd8coordin8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8Tests/Pods-playd8coordin8Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +117,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		933646DB1DFC93670009B6D6 /* Main Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9373A67C1DDFAB440081347B /* RootController.h */,
+				9373A67D1DDFAB440081347B /* RootController.m */,
+				2947BACF1DF21F4A001FA5AD /* HomeViewController.h */,
+				2947BAD01DF21F4A001FA5AD /* HomeViewController.m */,
+				2947BAD21DF21F64001FA5AD /* InviteViewController.h */,
+				2947BAD31DF21F64001FA5AD /* InviteViewController.m */,
+				2947BAD51DF21F78001FA5AD /* EventViewController.h */,
+				2947BAD61DF21F78001FA5AD /* EventViewController.m */,
+				2947BAD81DF21F95001FA5AD /* UserViewController.h */,
+				2947BAD91DF21F95001FA5AD /* UserViewController.m */,
+			);
+			name = "Main Controllers";
+			sourceTree = "<group>";
+		};
 		93678374DE0FF1B6D7DE7BB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,27 +169,20 @@
 		9373A6751DDFAB440081347B /* playd8coordin8 */ = {
 			isa = PBXGroup;
 			children = (
+				933646DB1DFC93670009B6D6 /* Main Controllers */,
 				9314C6991DF49EEE00408089 /* playd8coordin8.entitlements */,
 				93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */,
 				93CD24961DF212C4001A00D9 /* Event.h */,
 				93CD24971DF212C4001A00D9 /* Event.m */,
-				9373A67C1DDFAB440081347B /* RootController.h */,
-				9373A67D1DDFAB440081347B /* RootController.m */,
 				9373A67F1DDFAB440081347B /* Main.storyboard */,
 				9373A6821DDFAB440081347B /* Assets.xcassets */,
 				9373A6841DDFAB440081347B /* LaunchScreen.storyboard */,
 				9373A6871DDFAB440081347B /* Info.plist */,
 				9373A6761DDFAB440081347B /* Supporting Files */,
-				2947BACF1DF21F4A001FA5AD /* HomeViewController.h */,
-				2947BAD01DF21F4A001FA5AD /* HomeViewController.m */,
-				2947BAD21DF21F64001FA5AD /* InviteViewController.h */,
-				2947BAD31DF21F64001FA5AD /* InviteViewController.m */,
-				2947BAD51DF21F78001FA5AD /* EventViewController.h */,
-				2947BAD61DF21F78001FA5AD /* EventViewController.m */,
-				2947BAD81DF21F95001FA5AD /* UserViewController.h */,
-				2947BAD91DF21F95001FA5AD /* UserViewController.m */,
 				938881371DF8B4AA00DCECE3 /* EventMakerViewController.h */,
 				938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */,
+				93D6A4DA1DFC97880058A5C5 /* LoginViewController.h */,
+				93D6A4DB1DFC97880058A5C5 /* LoginViewController.m */,
 			);
 			path = playd8coordin8;
 			sourceTree = "<group>";
@@ -505,6 +518,7 @@
 				2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */,
 				938881391DF8B4AA00DCECE3 /* EventMakerViewController.m in Sources */,
 				9373A67E1DDFAB440081347B /* RootController.m in Sources */,
+				93D6A4DC1DFC97880058A5C5 /* LoginViewController.m in Sources */,
 				2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */,
 				9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */,
 				2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */,
