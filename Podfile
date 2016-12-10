@@ -18,6 +18,8 @@ target 'playd8coordin8' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
 
+  pod 'FirebaseUI'
+
   pod 'FBSDKCoreKit'
   pod 'FBSDKShareKit'
   pod 'FBSDKLoginKit'
