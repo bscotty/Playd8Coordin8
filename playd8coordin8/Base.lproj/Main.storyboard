@@ -285,7 +285,7 @@
         <!--Root Controller-->
         <scene sceneID="CiE-jL-3t0">
             <objects>
-                <tabBarController id="pQT-b9-y1A" customClass="RootController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Root" id="pQT-b9-y1A" customClass="RootController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Sjz-Pt-ZlJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

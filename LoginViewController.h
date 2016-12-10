@@ -12,5 +12,6 @@
 @interface LoginViewController : UIViewController <FUIAuthDelegate>
 
 @property (strong, nonatomic) FIRUser *user;
+@property BOOL hasLaunchedAlredy;
 
 @end

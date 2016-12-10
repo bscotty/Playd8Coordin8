@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "RootController.h"
+#import "AppDelegate.h"
+
 @import Firebase;
 @import FirebaseAuthUI;
 
@@ -28,27 +30,43 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [FIRApp configure];
-    FUIAuth *authUI = [FUIAuth defaultAuthUI];
-    // You need to adopt a FUIAuthDelegate protocol to receive callback
-    authUI.delegate = self;
-    
-    NSArray<id<FUIAuthProvider>> *providers = @[
-                                                [[FUIGoogleAuth alloc] init],
-                                                /*[[FUIFacebookAuth alloc] init],
-                                                 [[FUITwitterAuth alloc] init],
-                                                 */];
-    
-    authUI.providers = providers;
-    
-    UINavigationController *authViewController = [authUI authViewController];
-    [self presentViewController:authViewController
-                       animated:true
-                     completion:^(void){
-                         NSLog(@"PD8 Authentication successful.");
-                     }];
-    
-    NSLog(@"PD8 Authentication?");
+    if (!(_hasLaunchedAlredy)) {
+        [FIRApp configure];
+        FUIAuth *authUI = [FUIAuth defaultAuthUI];
+        // You need to adopt a FUIAuthDelegate protocol to receive callback
+        authUI.delegate = self;
+        
+        NSArray<id<FUIAuthProvider>> *providers = @[
+                                                    [[FUIGoogleAuth alloc] init],
+                                                    /*[[FUIFacebookAuth alloc] init],
+                                                     [[FUITwitterAuth alloc] init],
+                                                     */];
+        
+        authUI.providers = providers;
+        
+        UINavigationController *authViewController = [authUI authViewController];
+        [self presentViewController:authViewController
+                           animated:true
+                         completion:^(void){
+                             NSLog(@"PD8 Authentication successful.");
+                         }];
+        
+        NSLog(@"PD8 Authentication?");
+        _hasLaunchedAlredy = YES;
+    } else {
+        NSLog(@"PD8 Login already complete, segueing to main activity.");
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+        appDelegate.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        RootController *rc = [storyboard instantiateViewControllerWithIdentifier:@"Root"];
+        // determine the initial view controller here and instantiate it with [storyboard instantiateViewControllerWithIdentifier:<storyboard id>];
+        
+        appDelegate.window.rootViewController = rc;
+        [appDelegate.window makeKeyAndVisible];
+    }
 }
 
 - (void)authUI:(FUIAuth *)authUI didSignInWithUser:(nullable FIRUser *)user error:(nullable NSError *)error {
