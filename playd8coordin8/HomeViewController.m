@@ -44,7 +44,12 @@ numberOfRowsInSection:(NSInteger)section{
                 reuseIdentifier:SimpleTableIdentifier];
     }
     
-    cell.textLabel.text = self.pendingInvites[indexPath.row];
+    if(tableView == self.upcomingTableView){
+        cell.textLabel.text = self.pendingInvites[indexPath.row];
+    }else {
+        cell.textLabel.text = self.committedEvents[indexPath.row];
+    }
+    
     return cell;
 }
 

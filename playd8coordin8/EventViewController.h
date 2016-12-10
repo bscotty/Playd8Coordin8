@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EventViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
+@property (copy, nonatomic) NSMutableArray *events;
 
 @end

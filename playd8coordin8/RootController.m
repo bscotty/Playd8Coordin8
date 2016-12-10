@@ -92,6 +92,7 @@
             if([_homeViewController.pendingInvites count] < 3){
              [_homeViewController.pendingInvites addObject: event];
             }
+            [_inviteViewController.invites addObject: event];
         }
     }
 }

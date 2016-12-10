@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InviteViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *inviteTable;
+@property (copy, nonatomic) NSMutableArray *invites;
 
 @end
