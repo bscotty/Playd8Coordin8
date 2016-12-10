@@ -47,6 +47,24 @@
             </objects>
             <point key="canvasLocation" x="1440.8" y="-239.73013493253376"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="iSj-M3-ZXx">
+            <objects>
+                <viewController id="G0O-0V-0eB" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IEk-3x-NK6"/>
+                        <viewControllerLayoutGuide type="bottom" id="xJP-1t-bxp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oo1-bV-P8M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3b4-Pu-3OP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-267" y="-571"/>
+        </scene>
         <!--Home-->
         <scene sceneID="ZKN-Fw-VTh">
             <objects>
@@ -315,7 +333,7 @@
         <!--Root Controller-->
         <scene sceneID="CiE-jL-3t0">
             <objects>
-                <tabBarController id="pQT-b9-y1A" customClass="RootController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Root" id="pQT-b9-y1A" customClass="RootController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Sjz-Pt-ZlJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 
 /// A user may send invites from iOS to users on other platforms, for e.g., users on Android.
-/// Use |GINInviteTargetApplication| to specify the non-iOS application that must be installed or
+/// Use @c GINInviteTargetApplication to specify the non-iOS application that must be installed or
 /// opened when a user acts on an invite on that platform.
 @interface FIRInvitesTargetApplication : NSObject
 
