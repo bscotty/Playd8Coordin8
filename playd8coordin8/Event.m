@@ -13,8 +13,10 @@
 - (void)addGuest:(NSString *)guestName {
     if(_guests == nil) {
         _guests = [[NSMutableArray alloc] init];
+        [_guests addObject:guestName];
+    } else {
+        [_guests addObject:guestName];
     }
-    [_guests addObject:guestName];
 }
 
 @end
