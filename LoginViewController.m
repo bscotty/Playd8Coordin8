@@ -48,7 +48,7 @@
         UINavigationController *authViewController = [authUI authViewController];
         [authViewController.view setBackgroundColor:[UIColor clearColor]];
         [self presentViewController:authViewController
-                           animated:true
+                           animated:false
                          completion:^(void){
                              NSLog(@"PD8 Authentication successful.");
                          }];
