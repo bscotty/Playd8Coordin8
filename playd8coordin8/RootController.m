@@ -70,6 +70,13 @@
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
             
+            NSLog(@"PD8 Event Key: %@", e.key);
+            NSLog(@"PD8 Event Date: %@", e.date);
+            NSLog(@"PD8 Event Time: %@", e.time);
+            NSLog(@"PD8 Event Location: %@", e.location);
+            NSLog(@"PD8 Event Guests: %@", e.guests);
+            NSLog(@"PD8 Event Attending: %@", e.isAttending);
+            
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [[e guests] addObject:[guest value]];
@@ -107,29 +114,4 @@
     [[events child:eventKey] setValue:event.isAttending forKey:@"attending"];
 }
 
-// Do these do things??? Can they????
--(IBAction) switchToInviteView:(id)sender{
-    self.inviteViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Invite"];
-    self.inviteViewController.view.frame = self.view.frame;
-    //not sure if this will work
-    [self presentViewController:self.inviteViewController animated:YES completion:nil];
-}
-
--(IBAction) switchToEventView:(id)sender{
-    self.eventViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Event"];
-    self.eventViewController.view.frame = self.view.frame;
-    [self presentViewController:self.eventViewController animated:YES completion:nil];
-}
-
--(IBAction) switchToUserView:(id)sender{
-    self.userViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"User"];
-    self.userViewController.view.frame = self.view.frame;
-    [self presentViewController:self.userViewController animated:YES completion:nil];
-}
-
--(IBAction) switchToHomeView:(id)sender{
-    self.homeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Home"];
-    self.homeViewController.view.frame = self.view.frame;
-    [self presentViewController:self.homeViewController animated:YES completion:nil];
-}
 @end
