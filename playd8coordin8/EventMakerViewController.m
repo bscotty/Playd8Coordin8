@@ -33,6 +33,7 @@
 - (IBAction)createEvent:(id)sender {
     // Get the event object from the textfields.
     Event *e = [[Event alloc] init];
+    [e setName:_nameField.text];
     [e setTime:_timeField.text];
     [e setDate:_dateField.text];
     [e setLocation:_locationField.text];
@@ -46,6 +47,7 @@
     NSString *key = [events childByAutoId].key;
 
     NSDictionary *post = @{@"attending": e.isAttending,
+                                @"name": e.name,
                                 @"time": e.time,
                                 @"date": e.date,
                             @"location": e.location,
@@ -55,6 +57,7 @@
     [ref updateChildValues:childUpdates];
     
     // Reset the text fields.
+    _nameField.text = @"Name";
     _timeField.text = @"Time";
     _dateField.text = @"Date";
     _locationField.text = @"Location";

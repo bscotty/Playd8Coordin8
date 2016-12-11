@@ -10,6 +10,7 @@
 #import "Event.h"
 
 @interface EventMakerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *timeField;
 @property (weak, nonatomic) IBOutlet UITextField *locationField;

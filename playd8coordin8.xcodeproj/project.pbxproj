@@ -127,6 +127,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93138D741DFDD72B000155E4 /* Supporting Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				93D6A4DA1DFC97880058A5C5 /* LoginViewController.h */,
+				93D6A4DB1DFC97880058A5C5 /* LoginViewController.m */,
+				938881371DF8B4AA00DCECE3 /* EventMakerViewController.h */,
+				938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */,
+				9366DFAD1DFCC41200827286 /* SignInViewController.h */,
+				9366DFAE1DFCC41200827286 /* SignInViewController.m */,
+				9366DFB01DFCC69F00827286 /* SignInViewController.xib */,
+				93138D711DFDD217000155E4 /* ChildMakerViewController.h */,
+				93138D721DFDD217000155E4 /* ChildMakerViewController.m */,
+			);
+			name = "Supporting Controllers";
+			sourceTree = "<group>";
+		};
 		933646DB1DFC93670009B6D6 /* Main Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,20 +195,15 @@
 		9373A6751DDFAB440081347B /* playd8coordin8 */ = {
 			isa = PBXGroup;
 			children = (
+				93138D741DFDD72B000155E4 /* Supporting Controllers */,
 				933646DB1DFC93670009B6D6 /* Main Controllers */,
 				9314C6991DF49EEE00408089 /* playd8coordin8.entitlements */,
 				93726BA51DDFAD5E0060C9ED /* GoogleService-Info.plist */,
-				93CD24961DF212C4001A00D9 /* Event.h */,
-				93CD24971DF212C4001A00D9 /* Event.m */,
 				9373A67F1DDFAB440081347B /* Main.storyboard */,
 				9373A6821DDFAB440081347B /* Assets.xcassets */,
 				9373A6841DDFAB440081347B /* LaunchScreen.storyboard */,
 				9373A6871DDFAB440081347B /* Info.plist */,
 				9373A6761DDFAB440081347B /* Supporting Files */,
-				938881371DF8B4AA00DCECE3 /* EventMakerViewController.h */,
-				938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */,
-				93D6A4DA1DFC97880058A5C5 /* LoginViewController.h */,
-				93D6A4DB1DFC97880058A5C5 /* LoginViewController.m */,
 			);
 			path = playd8coordin8;
 			sourceTree = "<group>";
@@ -200,15 +211,12 @@
 		9373A6761DDFAB440081347B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */,
 				9373A6791DDFAB440081347B /* AppDelegate.h */,
 				9373A67A1DDFAB440081347B /* AppDelegate.m */,
+				93CD24961DF212C4001A00D9 /* Event.h */,
+				93CD24971DF212C4001A00D9 /* Event.m */,
 				9373A6771DDFAB440081347B /* main.m */,
-				9366DFAD1DFCC41200827286 /* SignInViewController.h */,
-				9366DFAE1DFCC41200827286 /* SignInViewController.m */,
-				9366DFB01DFCC69F00827286 /* SignInViewController.xib */,
-				93138D711DFDD217000155E4 /* ChildMakerViewController.h */,
-				93138D721DFDD217000155E4 /* ChildMakerViewController.m */,
+				9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
