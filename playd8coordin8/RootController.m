@@ -69,6 +69,7 @@
             [e setDate:[[child childSnapshotForPath:@"date"] value]];
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
+            [e setIsAttending: [[child childSnapshotForPath: @"attending"] value]];
             
             NSLog(@"PD8 Event Key: %@", e.key);
             NSLog(@"PD8 Event Date: %@", e.date);
@@ -81,7 +82,12 @@
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [[e guests] addObject:[guest value]];
             }
+            
+            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ date at %@ time at %@ place with friend(s): %@ ", e.date, e.time , e.location, e.guests];
+
+            [e setCellText:cellText];
             [self.eventList addObject:e];
+            [self.eventViewController.events addObject:e];
             
         }
     // Handle Cancelations, so we know for debugging purposes.
@@ -90,18 +96,7 @@
         NSLog(@"%@", error.localizedDescription);
     }];
     
-    for(Event *event in _eventList){
-        if([[event isAttending] isEqual: @YES]){
-            if([_homeViewController.committedEvents count] < 3){
-             [_homeViewController.committedEvents addObject: event];
-            }
-        }else{
-            if([_homeViewController.pendingInvites count] < 3){
-             [_homeViewController.pendingInvites addObject: event];
-            }
-            [_inviteViewController.invites addObject: event];
-        }
-    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
+@import Firebase;
+
 
 @interface HomeViewController : UIViewController
-@property (nonatomic, weak) IBOutlet UITableView *upcomingTableView;
-@property (nonatomic, weak) IBOutlet UITableView *yourTableView;
-@property (copy, nonatomic) NSMutableArray *committedEvents; //goes into upcoming table view ( I know this is super confusing, sorry)
-@property (copy, nonatomic) NSMutableArray *pendingInvites; //goes into your table view
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+@property (nonatomic) NSMutableArray<Event *> *events;
+@property (weak, nonatomic) IBOutlet UILabel *eventName;
+@property (weak, nonatomic) IBOutlet UILabel *eventDate;
+@property (weak, nonatomic) IBOutlet UILabel *eventTime;
+@property (weak, nonatomic) IBOutlet UILabel *eventLocation;
+@property (weak, nonatomic) IBOutlet UILabel *eventGuests;
+
+
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G0O-0V-0eB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G0O-0V-0eB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -105,28 +105,46 @@
                                 <color key="textColor" red="0.32156862745098036" green="0.28235294117647058" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Committed Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6v-M5-QC6">
-                                <frame key="frameInset" minX="36" minY="129" width="303" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your next upcoming event:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-nn-BbL">
+                                <frame key="frameInset" minX="36" minY="115" width="251" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32156862745098036" green="0.28235294117647058" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="19"/>
-                                <color key="textColor" red="0.70588235294117641" green="0.67843137254901964" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yZ4-eG-VWi">
-                                <frame key="frameInset" minX="36" minY="390" width="303" height="180"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBv-rC-9d9">
+                                <frame key="frameInset" minX="36" minY="144" width="176" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="chf-qK-baF" id="h0B-v7-Dys"/>
-                                    <outlet property="delegate" destination="chf-qK-baF" id="VQo-76-8i6"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's happening?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcs-Yp-JcW">
-                                <frame key="frameInset" minX="46" minY="81" width="282" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date: date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5h-sa-lVv">
+                                <frame key="frameInset" minX="36" minY="173" width="176" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="23"/>
-                                <color key="textColor" red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guests: (guests)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV3-Q4-Jgk">
+                                <frame key="frameInset" minX="36" minY="231" width="303" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhh-e8-EtD">
+                                <frame key="frameInset" minX="36" minY="202" width="176" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:  time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpv-qg-KFP">
+                                <frame key="frameInset" minX="212" minY="173" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKk-Xm-ALe">
@@ -162,8 +180,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="domain.png" id="TMO-V8-lkR"/>
                     <connections>
-                        <outlet property="upcomingTableView" destination="nQ6-ba-qer" id="1uy-Jq-VXI"/>
-                        <outlet property="yourTableView" destination="yZ4-eG-VWi" id="Y4u-qL-8Ka"/>
+                        <outlet property="eventDate" destination="j5h-sa-lVv" id="a43-c1-6yH"/>
+                        <outlet property="eventGuests" destination="MV3-Q4-Jgk" id="kT0-Ym-DoK"/>
+                        <outlet property="eventLocation" destination="fhh-e8-EtD" id="Rk9-kf-Yis"/>
+                        <outlet property="eventName" destination="MBv-rC-9d9" id="ocK-v2-sDa"/>
+                        <outlet property="eventTime" destination="bpv-qg-KFP" id="7yO-UC-Jav"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN0-xg-6bN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,6 +222,16 @@
                                 <frame key="frameInset" minX="16" minY="71" width="343" height="539"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="SBp-9t-R9y">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SBp-9t-R9y" id="ezf-Qi-GwJ">
+                                            <frame key="frameInset" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="00m-JQ-lXd" id="dvk-82-Pip"/>
                                     <outlet property="delegate" destination="00m-JQ-lXd" id="CXB-IS-nFr"/>
@@ -211,7 +242,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="ic_checkmark_black_24.png" id="fna-aZ-RL9" userLabel="Item 3"/>
                     <connections>
-                        <outlet property="eventsTableView" destination="OAH-4R-eJ1" id="XjB-Sj-sQ8"/>
+                        <outlet property="eventTableView" destination="OAH-4R-eJ1" id="Ye7-2b-qqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jM0-Yh-sga" userLabel="First Responder" sceneMemberID="firstResponder"/>
