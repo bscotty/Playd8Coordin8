@@ -58,6 +58,8 @@
             [c setBio: [[child childSnapshotForPath:@"bio"] value]];
             [c setName: [[child childSnapshotForPath:@"name"] value]];
             
+            NSString * cellText = [[NSString alloc] initWithFormat:@"%@, Age %@, %@", c.type, c.age, c.bio];
+            [c setCellText: cellText];
             NSLog(@"PD8 capturing child %@", c.name);
             
             [self.children addObject:c];
@@ -99,6 +101,7 @@
     //Here the dataSource array is of dictionary objects
     Child *child = self.children[indexPath.row];
     cell.textLabel.text = child.name;
+    cell.detailTextLabel.text = child.cellText;
     
     return cell;
 }

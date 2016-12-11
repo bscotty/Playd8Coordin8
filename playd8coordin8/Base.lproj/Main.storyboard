@@ -260,16 +260,6 @@
                                         <frame key="frameInset" minX="8" minY="56" width="349" height="299"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Lio-wZ-ujq">
-                                                <rect key="frame" x="0.0" y="28" width="349" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lio-wZ-ujq" id="vPu-cU-7Fe">
-                                                    <frame key="frameInset" width="349" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="Arg-Rp-H3Z" id="1iS-vw-Pc2"/>
                                             <outlet property="delegate" destination="Arg-Rp-H3Z" id="z6U-uJ-u0D"/>
@@ -626,6 +616,6 @@
         <image name="playd8coordin8opt1.png" width="4226" height="4173"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yWP-GA-6r2"/>
+        <segue reference="IBN-if-UeL"/>
     </inferredMetricsTieBreakers>
 </document>

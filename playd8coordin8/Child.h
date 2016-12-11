@@ -14,4 +14,5 @@
 @property (strong, atomic) NSString* bio;
 @property (strong, atomic) NSString* name;
 @property (strong, atomic) NSString* type;
+@property (strong, atomic) NSString* cellText;
 @end
