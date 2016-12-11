@@ -179,6 +179,12 @@
     cell.textLabel.text = event.name;
     cell.detailTextLabel.text = event.cellText;
     
+    if([_events[indexPath.row].isAttending isEqual: @YES]) {
+        cell.backgroundColor = [UIColor greenColor];
+    } else {
+        cell.backgroundColor = [UIColor redColor];
+    }
+    
     return cell;
 }
 
