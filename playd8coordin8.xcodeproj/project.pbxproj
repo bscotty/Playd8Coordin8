@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0AA12AD1E5245503DDA4A88B /* Pods_playd8coordin8Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FF0816AFA07E08F8EF50C0 /* Pods_playd8coordin8Tests.framework */; };
 		1FA38E867B08376E350A620E /* Pods_playd8coordin8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B90F9C74DC00D211A0B4364 /* Pods_playd8coordin8.framework */; };
+		292B0FF41DFDEEFE00FB2131 /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = 292B0FF31DFDEEFD00FB2131 /* Child.m */; };
 		2947BAD11DF21F4A001FA5AD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD01DF21F4A001FA5AD /* HomeViewController.m */; };
 		2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD31DF21F64001FA5AD /* InviteViewController.m */; };
 		2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD61DF21F78001FA5AD /* EventViewController.m */; };
@@ -51,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		0B90F9C74DC00D211A0B4364 /* Pods_playd8coordin8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		292B0FF21DFDEEFD00FB2131 /* Child.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Child.h; sourceTree = "<group>"; };
+		292B0FF31DFDEEFD00FB2131 /* Child.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Child.m; sourceTree = "<group>"; };
 		2947BACF1DF21F4A001FA5AD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2947BAD01DF21F4A001FA5AD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2947BAD21DF21F64001FA5AD /* InviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteViewController.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				93CD24971DF212C4001A00D9 /* Event.m */,
 				9373A6771DDFAB440081347B /* main.m */,
 				9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */,
+				292B0FF21DFDEEFD00FB2131 /* Child.h */,
+				292B0FF31DFDEEFD00FB2131 /* Child.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 				93D6A4DC1DFC97880058A5C5 /* LoginViewController.m in Sources */,
 				2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */,
 				9373A67B1DDFAB440081347B /* AppDelegate.m in Sources */,
+				292B0FF41DFDEEFE00FB2131 /* Child.m in Sources */,
 				2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */,
 				2947BAD11DF21F4A001FA5AD /* HomeViewController.m in Sources */,
 				9373A6781DDFAB440081347B /* main.m in Sources */,

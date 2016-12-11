@@ -113,7 +113,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBv-rC-9d9">
-                                <frame key="frameInset" minX="36" minY="144" width="176" height="21"/>
+                                <frame key="frameInset" minX="36" minY="144" width="303" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -260,6 +260,20 @@
                                         <frame key="frameInset" minX="8" minY="56" width="349" height="299"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Lio-wZ-ujq">
+                                                <rect key="frame" x="0.0" y="28" width="349" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lio-wZ-ujq" id="vPu-cU-7Fe">
+                                                    <frame key="frameInset" width="349" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Arg-Rp-H3Z" id="1iS-vw-Pc2"/>
+                                            <outlet property="delegate" destination="Arg-Rp-H3Z" id="z6U-uJ-u0D"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.28235294119999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,6 +346,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_person_black_16.png" id="0ig-SB-IgP"/>
                     <connections>
+                        <outlet property="childTableView" destination="Yf4-JN-OhO" id="CF8-ad-pDm"/>
                         <outlet property="userEmail" destination="1Xn-8i-69r" id="zbJ-gp-DSF"/>
                         <outlet property="userImage" destination="dm8-SO-uaZ" id="jWT-xR-fdl"/>
                         <outlet property="userName" destination="4Tu-S1-3iw" id="zGk-Q5-IRG"/>
