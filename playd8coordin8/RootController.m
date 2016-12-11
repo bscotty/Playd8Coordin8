@@ -69,6 +69,7 @@
             [e setDate:[[child childSnapshotForPath:@"date"] value]];
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
+            [e setIsAttending: [[child childSnapshotForPath: @"attending"] value]];
             
             NSLog(@"PD8 Event Key: %@", e.key);
             NSLog(@"PD8 Event Date: %@", e.date);

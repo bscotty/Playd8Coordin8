@@ -20,10 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.yourTableView.delegate = self;
-    self.yourTableView.delegate = self;
-    self.committedEvents = [[NSMutableArray alloc] init];
-    self.pendingInvites = [[NSMutableArray alloc] init];
+    self.events = [[NSMutableArray alloc] init];
     //load an array with 3> upcoming events and "your" events from database into array
     
     self.ref = [[FIRDatabase database] reference];
@@ -42,38 +39,36 @@
             [e setDate:[[child childSnapshotForPath:@"date"] value]];
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
-            [e setIsAttending:[[child childSnapshotForPath:@"isAttending"] value]];
+            
+            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
+                [e setIsAttending: @YES];
+            }
+            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
+                [e setIsAttending: @NO];
+            }
+            
             
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [[e guests] addObject:[guest value]];
             }
-            
-            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ date at %@ time at %@ place with friend(s): %@ ", e.date, e.time , e.location, e.guests];
-            
-            [e setCellText:cellText];
-            NSLog(@"PD8  capturing event: %@", e.cellText);
-            if([e.isAttending isEqual:@YES]){
-                [self.committedEvents addObject:e];
-            }else{
-                [self.pendingInvites addObject:e];
+            if([e.isAttending isEqual: @YES]){
+                [self.events addObject: e];
             }
-            
+    
         }
-        [self.yourTableView reloadData];
-        
-        
-        if ([self.pendingInvites count]==0)
-        {
-            UILabel *fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, self.view.frame.size.height/2, 300, 60)];
-            fromLabel.text =@"No Result";
-            fromLabel.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
-            fromLabel.backgroundColor = [UIColor clearColor];
-            fromLabel.textColor = [UIColor lightGrayColor];
-            fromLabel.textAlignment = NSTextAlignmentLeft;
-            [self.view addSubview:fromLabel];
-            [self.yourTableView setHidden:YES];
+        if([self.events count] > 0){
+            Event* currentEvent = self.events[0];
+            self.eventDate.text = currentEvent.date;
+            self.eventTime.text = currentEvent.time;
+            self.eventLocation.text = currentEvent.location;
+            NSMutableString* guestList = [[NSMutableString alloc] initWithFormat:@""];
+            for(int i = 0; i < currentEvent.guests.count; i++){
+                [guestList appendString: currentEvent.guests[i]];
+            }
+            self.eventGuests.text = guestList;
         }
+        
         // Handle Cancelations, so we know for debugging purposes.
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"PD8 OBSERVE ERROR");
@@ -88,88 +83,7 @@
 }
 
 #pragma mark - Table view data source
--(NSInteger)tableView: (UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSInteger rowCount = 0;
-    if (section == 0){
-        if([self.committedEvents count] > 0){
-            if([self.committedEvents count] > 3){
-                rowCount = [self.committedEvents count];
-            }else{
-                rowCount = 3;
-            }
-        }else{
-            rowCount = 1;
-        }
-       
-    }
-    if(section == 1){
-        if([self.pendingInvites count] > 0){
-            if([self.pendingInvites count] > 3){
-                rowCount = [self.pendingInvites count];
-            }else{
-                rowCount = 3;
-            }
-        }else{
-            rowCount = 1;
-        }
-       
-    }
-    return rowCount;
-}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"PD8 TABLEVIEW SECTIONSINVIEW");
-    NSInteger numOfSections = 0;
-    if ([self.pendingInvites count] > 0)
-    {
-        self.yourTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        numOfSections                 = 1;
-        //yourTableView.backgroundView   = nil;
-        self.yourTableView.backgroundView = nil;
-    }
-    else
-    {
-        UILabel *noDataLabel         = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.yourTableView.bounds.size.width, self.yourTableView.bounds.size.height)];
-        noDataLabel.text             = @"No data available";
-        noDataLabel.textColor        = [UIColor blackColor];
-        noDataLabel.textAlignment    = NSTextAlignmentCenter;
-        //yourTableView.backgroundView = noDataLabel;
-        //yourTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.yourTableView.backgroundView = noDataLabel;
-        self.yourTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
-    
-    return numOfSections;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(section == 0)
-        return @"Committed Events";
-    else
-        return @"Pending Invites";
-}
-
--(UITableViewCell *)tableView: (UITableView *)tableView
-        cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault
-                reuseIdentifier:@"Cell"];
-    }
-    
-    if(indexPath.section == 0){
-        Event* currentEvent = [self.committedEvents objectAtIndex:indexPath.row];
-        NSString *cellValue = currentEvent.cellText;
-        cell.textLabel.text = cellValue;
-    }else{
-        Event* currentEvent = [self.pendingInvites objectAtIndex:indexPath.row];
-        NSString *cellValue = currentEvent.cellText;
-        cell.textLabel.text = cellValue;
-    }
-    return cell;
-    
-}
 
 
 /*

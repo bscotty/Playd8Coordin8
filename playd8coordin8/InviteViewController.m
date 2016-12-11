@@ -37,7 +37,12 @@
             [e setDate:[[child childSnapshotForPath:@"date"] value]];
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
-            [e setIsAttending:[[child childSnapshotForPath:@"isAttending"] value]];
+            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
+                [e setIsAttending: @YES];
+            }
+            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
+                [e setIsAttending: @NO];
+            }
             
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {

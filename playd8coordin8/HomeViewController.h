@@ -11,9 +11,14 @@
 @import Firebase;
 
 
-@interface HomeViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
-@property (nonatomic, weak) IBOutlet UITableView *yourTableView;
-@property (nonatomic) NSMutableArray<Event*> *committedEvents; //goes into upcoming table view ( I know this is super confusing, sorry)
-@property (nonatomic) NSMutableArray<Event*> *pendingInvites; //goes into your table view
+@interface HomeViewController : UIViewController
 @property (strong, nonatomic) FIRDatabaseReference *ref;
+@property (nonatomic) NSMutableArray<Event *> *events;
+@property (weak, nonatomic) IBOutlet UILabel *eventName;
+@property (weak, nonatomic) IBOutlet UILabel *eventDate;
+@property (weak, nonatomic) IBOutlet UILabel *eventTime;
+@property (weak, nonatomic) IBOutlet UILabel *eventLocation;
+@property (weak, nonatomic) IBOutlet UILabel *eventGuests;
+
+
 @end
