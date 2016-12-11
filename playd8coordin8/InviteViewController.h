@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
+@import Firebase;
 
-@interface InviteViewController : UIViewController
+@interface InviteViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *inviteTable;
-@property (copy, nonatomic) NSMutableArray *invites;
-
+@property (nonatomic) NSMutableArray<Event*> *invites;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 @end
