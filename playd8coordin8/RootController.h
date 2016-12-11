@@ -19,7 +19,7 @@
 
 // Firebase Reference / data
 @property (strong, nonatomic) FIRDatabaseReference *ref;
-@property (strong, nonatomic) NSMutableArray *eventList;
+@property (strong, nonatomic) NSMutableArray<Event*> *eventList;
 // All of our Tabs' View Controllers
 @property (strong, nonatomic) HomeViewController *homeViewController;
 @property (strong, nonatomic) InviteViewController *inviteViewController;

@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+#import "Event.h"
 
-@interface EventViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
-@property (copy, nonatomic) NSMutableArray *events;
+@interface EventViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (retain, nonatomic) IBOutlet UITableView *eventTableView;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
+@property (nonatomic) NSMutableArray<Event*> *events;
 
 @end
