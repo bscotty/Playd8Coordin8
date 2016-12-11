@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G0O-0V-0eB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G0O-0V-0eB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -45,7 +45,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Invites" image="ic_email_24.png" id="5Pe-bv-55a"/>
+                    <tabBarItem key="tabBarItem" title="Invites" image="invites.png" id="5Pe-bv-55a"/>
                     <connections>
                         <outlet property="inviteTable" destination="dUd-dV-TH1" id="6Ch-eY-2D0"/>
                     </connections>
@@ -169,7 +169,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="domain.png" id="TMO-V8-lkR"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="TMO-V8-lkR"/>
                     <connections>
                         <outlet property="eventDate" destination="j5h-sa-lVv" id="a43-c1-6yH"/>
                         <outlet property="eventGuests" destination="MV3-Q4-Jgk" id="kT0-Ym-DoK"/>
@@ -213,16 +213,6 @@
                                 <frame key="frameInset" minX="16" minY="71" width="343" height="539"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="SBp-9t-R9y">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SBp-9t-R9y" id="ezf-Qi-GwJ">
-                                            <frame key="frameInset" width="343" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="00m-JQ-lXd" id="dvk-82-Pip"/>
                                     <outlet property="delegate" destination="00m-JQ-lXd" id="CXB-IS-nFr"/>
@@ -231,7 +221,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="ic_checkmark_black_24.png" id="fna-aZ-RL9" userLabel="Item 3"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="events.png" id="fna-aZ-RL9" userLabel="Item 3"/>
                     <connections>
                         <outlet property="eventTableView" destination="OAH-4R-eJ1" id="Ye7-2b-qqq"/>
                     </connections>
@@ -334,7 +324,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="ic_person_black_16.png" id="0ig-SB-IgP"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="0ig-SB-IgP"/>
                     <connections>
                         <outlet property="childTableView" destination="Yf4-JN-OhO" id="CF8-ad-pDm"/>
                         <outlet property="userEmail" destination="1Xn-8i-69r" id="zbJ-gp-DSF"/>
@@ -611,11 +601,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="domain.png" width="24" height="24"/>
-        <image name="ic_checkmark_black_24.png" width="24" height="24"/>
-        <image name="ic_email_24.png" width="24" height="24"/>
-        <image name="ic_person_black_16.png" width="16" height="16"/>
+        <image name="events.png" width="48" height="48"/>
+        <image name="home.png" width="48" height="48"/>
+        <image name="invites.png" width="48" height="48"/>
         <image name="playd8coordin8opt1.png" width="4226" height="4173"/>
+        <image name="profile.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IBN-if-UeL"/>
