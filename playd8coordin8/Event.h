@@ -11,6 +11,7 @@
 @interface Event : NSObject
 
 @property (strong, atomic) NSString *key;
+@property (strong, atomic) NSString *name;
 @property (strong, atomic) NSString *date;
 @property (strong, atomic) NSString *time;
 @property (strong, atomic) NSString *location;
