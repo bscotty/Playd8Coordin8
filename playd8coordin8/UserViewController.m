@@ -7,6 +7,7 @@
 //
 
 #import "UserViewController.h"
+@import Firebase;
 
 @interface UserViewController ()
 
@@ -17,12 +18,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if([[FIRAuth auth] currentUser]) {
+        FIRUser *user = [FIRAuth auth].currentUser;
+        NSString *email = user.email;
+        // The user's ID, unique to the Firebase project.
+        // Do NOT use this value to authenticate with your backend server,
+        // if you have one. Use getTokenWithCompletion:completion: instead.
+        NSString *name = user.displayName;
+        
+        NSURL *photoURL = user.photoURL;
+        
+        _userName.text = name;
+        _userEmail.text = email;
+        _userImage.image=[[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:photoURL]];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table 
 
 /*
 #pragma mark - Navigation
