@@ -45,7 +45,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Invites" image="ic_email_24.png" id="5Pe-bv-55a"/>
+                    <tabBarItem key="tabBarItem" title="Invites" image="invites.png" id="5Pe-bv-55a"/>
                     <connections>
                         <outlet property="inviteTable" destination="dUd-dV-TH1" id="6Ch-eY-2D0"/>
                     </connections>
@@ -169,7 +169,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="domain.png" id="TMO-V8-lkR"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="TMO-V8-lkR"/>
                     <connections>
                         <outlet property="eventDate" destination="j5h-sa-lVv" id="a43-c1-6yH"/>
                         <outlet property="eventGuests" destination="MV3-Q4-Jgk" id="kT0-Ym-DoK"/>
@@ -221,7 +221,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="ic_checkmark_black_24.png" id="fna-aZ-RL9" userLabel="Item 3"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="events.png" id="fna-aZ-RL9" userLabel="Item 3"/>
                     <connections>
                         <outlet property="eventTableView" destination="OAH-4R-eJ1" id="Ye7-2b-qqq"/>
                     </connections>
@@ -320,7 +320,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686274509807" green="1" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="ic_person_black_16.png" id="0ig-SB-IgP"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="0ig-SB-IgP"/>
                     <connections>
                         <outlet property="userEmail" destination="1Xn-8i-69r" id="zbJ-gp-DSF"/>
                         <outlet property="userImage" destination="dm8-SO-uaZ" id="jWT-xR-fdl"/>
@@ -594,13 +594,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="domain.png" width="24" height="24"/>
-        <image name="ic_checkmark_black_24.png" width="24" height="24"/>
-        <image name="ic_email_24.png" width="24" height="24"/>
-        <image name="ic_person_black_16.png" width="16" height="16"/>
+        <image name="events.png" width="48" height="48"/>
+        <image name="home.png" width="48" height="48"/>
+        <image name="invites.png" width="48" height="48"/>
         <image name="playd8coordin8opt1.png" width="4226" height="4173"/>
+        <image name="profile.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yWP-GA-6r2"/>
+        <segue reference="IBN-if-UeL"/>
     </inferredMetricsTieBreakers>
 </document>

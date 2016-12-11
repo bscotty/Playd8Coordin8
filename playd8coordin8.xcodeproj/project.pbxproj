@@ -15,6 +15,10 @@
 		2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD91DF21F95001FA5AD /* UserViewController.m */; };
 		680E3F8DBF91D24840D14BD1 /* Pods_playd8coordin8UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A289CD4CBE8A1F22D227B6A /* Pods_playd8coordin8UITests.framework */; };
 		93138D731DFDD217000155E4 /* ChildMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93138D721DFDD217000155E4 /* ChildMakerViewController.m */; };
+		93138D861DFDFB94000155E4 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 93138D851DFDFB94000155E4 /* profile.png */; };
+		93138D881DFDFB99000155E4 /* events.png in Resources */ = {isa = PBXBuildFile; fileRef = 93138D871DFDFB99000155E4 /* events.png */; };
+		93138D8A1DFDFBA5000155E4 /* invites.png in Resources */ = {isa = PBXBuildFile; fileRef = 93138D891DFDFBA5000155E4 /* invites.png */; };
+		93138D8C1DFDFBAD000155E4 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 93138D8B1DFDFBAD000155E4 /* home.png */; };
 		9366DFA91DFCBBD200827286 /* playd8coordin8opt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */; };
 		9366DFAF1DFCC41200827286 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9366DFAE1DFCC41200827286 /* SignInViewController.m */; };
 		9366DFB11DFCC69F00827286 /* SignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9366DFB01DFCC69F00827286 /* SignInViewController.xib */; };
@@ -66,6 +70,10 @@
 		85F557921F1328015768CCBB /* Pods-playd8coordin8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8/Pods-playd8coordin8.debug.xcconfig"; sourceTree = "<group>"; };
 		93138D711DFDD217000155E4 /* ChildMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildMakerViewController.h; sourceTree = "<group>"; };
 		93138D721DFDD217000155E4 /* ChildMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildMakerViewController.m; sourceTree = "<group>"; };
+		93138D851DFDFB94000155E4 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		93138D871DFDFB99000155E4 /* events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = events.png; sourceTree = "<group>"; };
+		93138D891DFDFBA5000155E4 /* invites.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invites.png; sourceTree = "<group>"; };
+		93138D8B1DFDFBAD000155E4 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		9314C6991DF49EEE00408089 /* playd8coordin8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = playd8coordin8.entitlements; sourceTree = "<group>"; };
 		9366DFA81DFCBBD200827286 /* playd8coordin8opt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playd8coordin8opt1.png; sourceTree = "<group>"; };
 		9366DFAD1DFCC41200827286 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
@@ -211,6 +219,10 @@
 		9373A6761DDFAB440081347B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93138D8B1DFDFBAD000155E4 /* home.png */,
+				93138D891DFDFBA5000155E4 /* invites.png */,
+				93138D871DFDFB99000155E4 /* events.png */,
+				93138D851DFDFB94000155E4 /* profile.png */,
 				9373A6791DDFAB440081347B /* AppDelegate.h */,
 				9373A67A1DDFAB440081347B /* AppDelegate.m */,
 				93CD24961DF212C4001A00D9 /* Event.h */,
@@ -376,8 +388,12 @@
 				9373A6831DDFAB440081347B /* Assets.xcassets in Resources */,
 				9373A6811DDFAB440081347B /* Main.storyboard in Resources */,
 				9366DFA91DFCBBD200827286 /* playd8coordin8opt1.png in Resources */,
+				93138D8C1DFDFBAD000155E4 /* home.png in Resources */,
+				93138D881DFDFB99000155E4 /* events.png in Resources */,
 				9366DFB11DFCC69F00827286 /* SignInViewController.xib in Resources */,
 				93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */,
+				93138D8A1DFDFBA5000155E4 /* invites.png in Resources */,
+				93138D861DFDFB94000155E4 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
