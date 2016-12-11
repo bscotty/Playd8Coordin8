@@ -36,6 +36,7 @@
             
             // Get the Firebase Key, along with the date, time, and location.
             [e setKey:[child key]];
+            [e setName:[[child childSnapshotForPath:@"name"] value]];
             [e setDate:[[child childSnapshotForPath:@"date"] value]];
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
@@ -59,6 +60,7 @@
         }
         if([self.events count] > 0){
             Event* currentEvent = self.events[0];
+            self.eventName.text = currentEvent.name;
             self.eventDate.text = currentEvent.date;
             self.eventTime.text = currentEvent.time;
             self.eventLocation.text = currentEvent.location;

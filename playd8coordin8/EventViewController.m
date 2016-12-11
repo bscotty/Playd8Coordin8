@@ -35,6 +35,7 @@
             
             // Get the Firebase Key, along with the date, time, and location.
             [e setKey:[child key]];
+            [e setName:[[child childSnapshotForPath:@"name"] value]];
             [e setDate:[[child childSnapshotForPath:@"date"] value]];
             [e setTime:[[child childSnapshotForPath:@"time"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
@@ -91,7 +92,8 @@
     }
     //Here the dataSource array is of dictionary objects
     Event *event = self.events[indexPath.row];
-    cell.textLabel.text = event.cellText;
+    cell.textLabel.text = event.name;
+    cell.detailTextLabel.text = event.cellText;
     
     return cell;
 }
