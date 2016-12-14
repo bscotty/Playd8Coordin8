@@ -24,10 +24,10 @@
     //load an array with 3> upcoming events and "your" events from database into array
     
     self.ref = [[FIRDatabase database] reference];
-    FIRDatabaseReference *events = [_ref child:@"events"];
+    FIRDatabaseReference *eventRef = [_ref child:@"events"];
     NSLog(@"PD8 We made it past the references and are waiting on the observation event.");
     
-    [events observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    [eventRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSLog(@"PD8 OBSERVING DATABASE");
         for(FIRDataSnapshot* child in snapshot.children) {
             NSLog(@"PD8 CHILD FOUND");
@@ -52,12 +52,15 @@
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [[e guests] addObject:[guest value]];
             }
-            if([e.isAttending isEqual: @YES]){
+            // If the event has already passed, don't add it to our events.
+            if([e.date timeIntervalSinceNow] > -3600.0 && [e.isAttending isEqual: @YES]) {
                 [self.events addObject: e];
             }
-    
         }
         if([self.events count] > 0){
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:TRUE];
+            [_events sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+            
             Event* currentEvent = self.events[0];
             self.eventName.text = currentEvent.name;
             self.eventDate.text = currentEvent.getDateAndTimeForUI;
