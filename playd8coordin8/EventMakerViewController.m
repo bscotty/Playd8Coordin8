@@ -6,12 +6,13 @@
 //  Copyright © 2016 nyu.edu. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
 #import "EventMakerViewController.h"
 #import "Event.h"
 
 @import Firebase;
 
-@interface EventMakerViewController ()
+@interface EventMakerViewController () <AVAudioPlayerDelegate>
 
 @end
 
@@ -34,9 +35,8 @@
     // Get the event object from the textfields.
     Event *e = [[Event alloc] init];
     [e setName:_nameField.text];
-    [e setTime:_timeField.text];
-    [e setDate:_dateField.text];
     [e setLocation:_locationField.text];
+    [e setDate:_datePicker.date]; // This is the only time we should directly set the date object
     [e addGuest:_guestField.text];
     [e setIsAttending:@YES];
    
@@ -48,8 +48,7 @@
 
     NSDictionary *post = @{@"attending": e.isAttending,
                                 @"name": e.name,
-                                @"time": e.time,
-                                @"date": e.date,
+                                @"date": e.getDateAndTimeForFirebase,
                             @"location": e.location,
                               @"guests": e.guests};
     
@@ -58,8 +57,6 @@
     
     // Reset the text fields.
     _nameField.text = @"Name";
-    _timeField.text = @"Time";
-    _dateField.text = @"Date";
     _locationField.text = @"Location";
     _guestField.text = @"Guest";
     
@@ -73,9 +70,10 @@
     UIAlertAction* defaultAction =
                     [UIAlertAction actionWithTitle:@"OK"
                                              style:UIAlertActionStyleDefault
-                                           handler:^(UIAlertAction * action) {[self
-                     dismissViewControllerAnimated:YES
-                                        completion:nil];}];
+                                           handler:^(UIAlertAction * action) {
+                                               [self dismissViewControllerAnimated:YES completion:nil];
+                                               [[self audioplayer] play];
+                                           }];
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -83,6 +81,19 @@
 - (IBAction)cancelEventCreation:(id)sender {
     [self dismissViewControllerAnimated:YES
                             completion:nil];
+}
+
+#define YourSound @"notification.mp3"
+- (AVAudioPlayer *)audioplayer {
+    if(!_audioplayer) {
+        NSURL *audioURL = [[NSBundle mainBundle] URLForResource:YourSound.stringByDeletingPathExtension withExtension:YourSound.pathExtension];
+        NSData *audioData = [NSData dataWithContentsOfURL:audioURL];
+        NSError *error = nil;
+        // assing the audioplayer to a property so ARC won't release it immediately
+        _audioplayer = [[AVAudioPlayer alloc] initWithData:audioData error:&error];
+        _audioplayer.delegate = self;
+    }
+    return _audioplayer;
 }
 
 

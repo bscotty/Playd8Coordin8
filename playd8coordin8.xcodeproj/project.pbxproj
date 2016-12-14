@@ -33,6 +33,7 @@
 		9373A6911DDFAB450081347B /* playd8coordin8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A6901DDFAB450081347B /* playd8coordin8Tests.m */; };
 		9373A69C1DDFAB450081347B /* playd8coordin8UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9373A69B1DDFAB450081347B /* playd8coordin8UITests.m */; };
 		938881391DF8B4AA00DCECE3 /* EventMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */; };
+		93C09FB41E01FDC2003AD7D4 /* notification.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 93C09FB31E01FDC2003AD7D4 /* notification.mp3 */; };
 		93CD24981DF212C4001A00D9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CD24971DF212C4001A00D9 /* Event.m */; };
 		93D6A4DC1DFC97880058A5C5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D6A4DB1DFC97880058A5C5 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		9373A69D1DDFAB450081347B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		938881371DF8B4AA00DCECE3 /* EventMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventMakerViewController.h; sourceTree = "<group>"; };
 		938881381DF8B4AA00DCECE3 /* EventMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMakerViewController.m; sourceTree = "<group>"; };
+		93C09FB31E01FDC2003AD7D4 /* notification.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notification.mp3; sourceTree = "<group>"; };
 		93CD24961DF212C4001A00D9 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		93CD24971DF212C4001A00D9 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		93D6A4DA1DFC97880058A5C5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		9373A6761DDFAB440081347B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				93C09FB31E01FDC2003AD7D4 /* notification.mp3 */,
 				93138D8B1DFDFBAD000155E4 /* home.png */,
 				93138D891DFDFBA5000155E4 /* invites.png */,
 				93138D871DFDFB99000155E4 /* events.png */,
@@ -394,6 +397,7 @@
 				9373A6811DDFAB440081347B /* Main.storyboard in Resources */,
 				9366DFA91DFCBBD200827286 /* playd8coordin8opt1.png in Resources */,
 				93138D8C1DFDFBAD000155E4 /* home.png in Resources */,
+				93C09FB41E01FDC2003AD7D4 /* notification.mp3 in Resources */,
 				93138D881DFDFB99000155E4 /* events.png in Resources */,
 				9366DFB11DFCC69F00827286 /* SignInViewController.xib in Resources */,
 				93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */,

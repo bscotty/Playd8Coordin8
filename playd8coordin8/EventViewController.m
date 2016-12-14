@@ -42,8 +42,7 @@
             // Get the Firebase Key, along with the date, time, and location.
             [e setKey:[child key]];
             [e setName:[[child childSnapshotForPath:@"name"] value]];
-            [e setDate:[[child childSnapshotForPath:@"date"] value]];
-            [e setTime:[[child childSnapshotForPath:@"time"] value]];
+            [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
             if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
                 [e setIsAttending: @YES];
@@ -57,7 +56,7 @@
                 [e addGuest:guest.value];
             }
             
-            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ date at %@ time at %@ place with friend(s): %@ ", e.date, e.time , e.location, e.guests];
+            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): %@ ", e.getDateAndTimeForUI, e.location, e.guests];
             
             [e setCellText:cellText];
             NSLog(@"PD8  capturing event: %@", e.cellText);
@@ -125,8 +124,7 @@
 -(void) updateFirebaseWithEvent:(Event*)event {
     NSDictionary *post = @{@"attending": event.isAttending,
                            @"name": event.name,
-                           @"time": event.time,
-                           @"date": event.date,
+                           @"date": event.getDateAndTimeForFirebase,
                            @"location": event.location,
                            @"guests": event.guests};
     
