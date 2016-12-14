@@ -66,14 +66,12 @@
             
             // Get the Firebase Key, along with the date, time, and location.
             [e setKey:[child key]];
-            [e setDate:[[child childSnapshotForPath:@"date"] value]];
-            [e setTime:[[child childSnapshotForPath:@"time"] value]];
+            [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
             [e setIsAttending: [[child childSnapshotForPath: @"attending"] value]];
             
             NSLog(@"PD8 Event Key: %@", e.key);
-            NSLog(@"PD8 Event Date: %@", e.date);
-            NSLog(@"PD8 Event Time: %@", e.time);
+            NSLog(@"PD8 Event Date: %@", e.getDateAndTimeForUI);
             NSLog(@"PD8 Event Location: %@", e.location);
             NSLog(@"PD8 Event Guests: %@", e.guests);
             NSLog(@"PD8 Event Attending: %@", e.isAttending);
@@ -83,7 +81,7 @@
                 [[e guests] addObject:[guest value]];
             }
             
-            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ date at %@ time at %@ place with friend(s): %@ ", e.date, e.time , e.location, e.guests];
+            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): %@ ", e.getDateAndTimeForUI, e.location, e.guests];
 
             [e setCellText:cellText];
             [self.eventList addObject:e];
@@ -109,8 +107,8 @@
     FIRDatabaseReference *events = [_ref child:@"events"];
     
     NSString* eventKey = [[events childByAutoId] key];
-    [[events child:eventKey] setValue:event.time forKey:@"time"];
-    [[events child:eventKey] setValue:event.date forKey:@"date"];
+    [[events child:eventKey] setValue:event.name forKey:@"name"];
+    [[events child:eventKey] setValue:event.getDateAndTimeForFirebase forKey:@"date"];
     [[events child:eventKey] setValue:event.location forKey:@"location"];
     [[events child:eventKey] setValue:event.isAttending forKey:@"attending"];
 }

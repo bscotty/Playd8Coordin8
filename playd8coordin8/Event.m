@@ -19,4 +19,30 @@
     }
 }
 
+- (NSString *) getDateAndTimeForFirebase {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYYMMdd HH:mm:ss"];  //20160217 13:14:22
+    NSString *dateString = [dateFormatter stringFromDate: _date];
+    
+    return dateString;
+}
+
+- (NSString *) getDateAndTimeForUI {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterLongStyle;
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    NSString *dateString = [dateFormatter stringFromDate: _date];
+    
+    return dateString;
+}
+
+- (void)setDateFromFormattedString:(NSString *)s {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYYMMdd HH:mm:ss"];
+    
+    _date = [dateFormatter dateFromString:s];
+}
+
+
+
 @end

@@ -37,8 +37,7 @@
             // Get the Firebase Key, along with the date, time, and location.
             [e setKey:[child key]];
             [e setName:[[child childSnapshotForPath:@"name"] value]];
-            [e setDate:[[child childSnapshotForPath:@"date"] value]];
-            [e setTime:[[child childSnapshotForPath:@"time"] value]];
+            [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
             
             if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
@@ -61,8 +60,7 @@
         if([self.events count] > 0){
             Event* currentEvent = self.events[0];
             self.eventName.text = currentEvent.name;
-            self.eventDate.text = currentEvent.date;
-            self.eventTime.text = currentEvent.time;
+            self.eventDate.text = currentEvent.getDateAndTimeForUI;
             self.eventLocation.text = currentEvent.location;
             NSMutableString* guestList = [[NSMutableString alloc] initWithFormat:@""];
             for(int i = 0; i < currentEvent.guests.count; i++){
