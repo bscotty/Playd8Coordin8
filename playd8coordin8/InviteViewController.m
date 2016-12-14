@@ -58,11 +58,12 @@
             
             [e setCellText:cellText];
             NSLog(@"PD8  capturing event: %@", e.cellText);
-            if([e.isAttending isEqual:@NO]){
+            if([e.date timeIntervalSinceNow] > -3600.0 && [e.isAttending isEqual:@NO]){
                 [self.invites addObject:e];
             }
-            
         }
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:TRUE];
+        [self.invites sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
         [self.inviteTable reloadData];
         
         // Handle Cancelations, so we know for debugging purposes.

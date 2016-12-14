@@ -60,8 +60,13 @@
             
             [e setCellText:cellText];
             NSLog(@"PD8  capturing event: %@", e.cellText);
-            [self.events addObject:e];
+            if([e.date timeIntervalSinceNow] > -3600.0) {
+                [self.events addObject:e];
+            }
         }
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:TRUE];
+        [self.events sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        
         NSLog(@"PD8:  before reload events: %@", self.events[0].cellText);
         [self.eventTableView reloadData];
         NSLog(@"PD8: after reload events: %@", self.events[0].cellText);
