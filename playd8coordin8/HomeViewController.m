@@ -22,6 +22,15 @@
     [super viewDidLoad];
     self.events = [[NSMutableArray alloc] init];
     //load an array with 3> upcoming events and "your" events from database into array
+    if([[FIRAuth auth] currentUser]){
+        FIRUser *user = [FIRAuth auth].currentUser;
+        NSString *name = user.displayName;
+        NSString *welcomeText = [[NSString alloc] initWithFormat:@"Welcome %@", name];
+        _welcomeLabel.text = welcomeText;
+    }
+    
+    NSDate *date = [NSDate date];
+    _currentDateLabel = date.description;
     
     self.ref = [[FIRDatabase database] reference];
     FIRDatabaseReference *eventRef = [_ref child:@"events"];
