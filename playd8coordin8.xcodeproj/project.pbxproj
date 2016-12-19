@@ -14,6 +14,7 @@
 		2947BAD41DF21F64001FA5AD /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD31DF21F64001FA5AD /* InviteViewController.m */; };
 		2947BAD71DF21F78001FA5AD /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD61DF21F78001FA5AD /* EventViewController.m */; };
 		2947BADA1DF21F95001FA5AD /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947BAD91DF21F95001FA5AD /* UserViewController.m */; };
+		29F8D5C31E02412500B591C3 /* playdatecoordinatelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 29F8D5C21E02412500B591C3 /* playdatecoordinatelogo.png */; };
 		680E3F8DBF91D24840D14BD1 /* Pods_playd8coordin8UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A289CD4CBE8A1F22D227B6A /* Pods_playd8coordin8UITests.framework */; };
 		93138D731DFDD217000155E4 /* ChildMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93138D721DFDD217000155E4 /* ChildMakerViewController.m */; };
 		93138D861DFDFB94000155E4 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 93138D851DFDFB94000155E4 /* profile.png */; };
@@ -67,6 +68,7 @@
 		2947BAD61DF21F78001FA5AD /* EventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventViewController.m; sourceTree = "<group>"; };
 		2947BAD81DF21F95001FA5AD /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		2947BAD91DF21F95001FA5AD /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		29F8D5C21E02412500B591C3 /* playdatecoordinatelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playdatecoordinatelogo.png; path = ../../../../playdatecoordinatelogo.png; sourceTree = "<group>"; };
 		4A289CD4CBE8A1F22D227B6A /* Pods_playd8coordin8UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playd8coordin8UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DEF42DA1AF4AE25545FFAC /* Pods-playd8coordin8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8.release.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8/Pods-playd8coordin8.release.xcconfig"; sourceTree = "<group>"; };
 		598C148CE9FBD6B114E07546 /* Pods-playd8coordin8UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playd8coordin8UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playd8coordin8UITests/Pods-playd8coordin8UITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				93C09FB31E01FDC2003AD7D4 /* notification.mp3 */,
 				93138D8B1DFDFBAD000155E4 /* home.png */,
+				29F8D5C21E02412500B591C3 /* playdatecoordinatelogo.png */,
 				93138D891DFDFBA5000155E4 /* invites.png */,
 				93138D871DFDFB99000155E4 /* events.png */,
 				93138D851DFDFB94000155E4 /* profile.png */,
@@ -402,6 +405,7 @@
 				9366DFB11DFCC69F00827286 /* SignInViewController.xib in Resources */,
 				93726BA61DDFAD5E0060C9ED /* GoogleService-Info.plist in Resources */,
 				93138D8A1DFDFBA5000155E4 /* invites.png in Resources */,
+				29F8D5C31E02412500B591C3 /* playdatecoordinatelogo.png in Resources */,
 				93138D861DFDFB94000155E4 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
