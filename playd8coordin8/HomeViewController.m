@@ -40,9 +40,6 @@
     _currentTimeLabel.text = timeString;
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(UpdateTime:) userInfo:nil repeats:YES];
     
-    self.inviteCount = 0;
-    self.commitmentCount = 0;
-    
     self.ref = [[FIRDatabase database] reference];
     FIRDatabaseReference *eventRef = [_ref child:@"events"];
     NSLog(@"PD8 We made it past the references and are waiting on the observation event.");
@@ -62,15 +59,9 @@
             
             if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
                 [e setIsAttending: @YES];
-                if([e.date timeIntervalSinceNow] > -3600.0){
-                    self.commitmentCount++;
-                }
             }
             if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
                 [e setIsAttending: @NO];
-                if([e.date timeIntervalSinceNow] > -3600.0){
-                    self.inviteCount++;
-                }
             }
             
             
@@ -79,7 +70,7 @@
                 [[e guests] addObject:[guest value]];
             }
             // If the event has already passed, don't add it to our events.
-            if([e.date timeIntervalSinceNow] > -3600.0 && [e.isAttending isEqual: @YES]) {
+            if([e.date timeIntervalSinceNow] > -3600.0) {
                 [self.events addObject: e];
             }
         }
@@ -97,12 +88,21 @@
             }
             _eventGuests.text = guestList;
         }
-       
+
+        self.inviteCount = 0;
+        self.commitmentCount = 0;
         
+        for (int i = 0; i < self.events.count; i++) {
+            if([self.events[i].isAttending isEqual: @YES]) {
+                self.commitmentCount++;
+            } else {
+                self.inviteCount++;
+            }
+        }
         
-        NSString *inviteCountString = [[NSString alloc] initWithFormat:@"You have %d pending invites.", self.inviteCount];
+        NSString *inviteCountString = [[NSString alloc] initWithFormat:@"You have %lu pending invites.", (unsigned long)self.inviteCount];
         _pendingInvitesLabel.text = inviteCountString;
-        NSString *commitmentCountString = [[NSString alloc] initWithFormat:@"You have %d upcoming events", self.commitmentCount];
+        NSString *commitmentCountString = [[NSString alloc] initWithFormat:@"You have %lu upcoming events", self.commitmentCount];
         _upcomingEventsLabel.text = commitmentCountString;
         
         // Handle Cancelations, so we know for debugging purposes.
