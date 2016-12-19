@@ -29,8 +29,19 @@
         _welcomeLabel.text = welcomeText;
     }
     
-    NSDate *date = [NSDate date];
-    _currentDateLabel = date.description;
+    NSDate *date = [[NSDate alloc] init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterLongStyle;
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    _currentDateLabel.text = dateString;
+    self.timeFormatter = [[NSDateFormatter alloc] init];
+    self.timeFormatter.timeStyle = NSDateFormatterShortStyle;
+    NSString *timeString = [self.timeFormatter stringFromDate:date];
+    _currentTimeLabel.text = timeString;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(UpdateTime:) userInfo:nil repeats:YES];
+    
+    self.inviteCount = 0;
+    self.commitmentCount = 0;
     
     self.ref = [[FIRDatabase database] reference];
     FIRDatabaseReference *eventRef = [_ref child:@"events"];
@@ -51,9 +62,15 @@
             
             if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
                 [e setIsAttending: @YES];
+                if([e.date timeIntervalSinceNow] > -3600.0){
+                    self.commitmentCount++;
+                }
             }
             if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
                 [e setIsAttending: @NO];
+                if([e.date timeIntervalSinceNow] > -3600.0){
+                    self.inviteCount++;
+                }
             }
             
             
@@ -71,15 +88,22 @@
             [_events sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
             
             Event* currentEvent = self.events[0];
-            self.eventName.text = currentEvent.name;
-            self.eventDate.text = currentEvent.getDateAndTimeForUI;
-            self.eventLocation.text = currentEvent.location;
+            _eventName.text = currentEvent.name;
+            _eventDate.text = currentEvent.getDateAndTimeForUI;
+            _eventLocation.text = currentEvent.location;
             NSMutableString* guestList = [[NSMutableString alloc] initWithFormat:@""];
             for(int i = 0; i < currentEvent.guests.count; i++){
                 [guestList appendString: currentEvent.guests[i]];
             }
-            self.eventGuests.text = guestList;
+            _eventGuests.text = guestList;
         }
+       
+        
+        
+        NSString *inviteCountString = [[NSString alloc] initWithFormat:@"You have %d pending invites.", self.inviteCount];
+        _pendingInvitesLabel.text = inviteCountString;
+        NSString *commitmentCountString = [[NSString alloc] initWithFormat:@"You have %d upcoming events", self.commitmentCount];
+        _upcomingEventsLabel.text = commitmentCountString;
         
         // Handle Cancelations, so we know for debugging purposes.
     } withCancelBlock:^(NSError * _Nonnull error) {
@@ -92,6 +116,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)UpdateTime:(id)sender
+{
+    NSString *currentTime  = [self.timeFormatter stringFromDate:[NSDate date]];
+    self.currentTimeLabel.text = currentTime;
+
 }
 
 #pragma mark - Table view data source

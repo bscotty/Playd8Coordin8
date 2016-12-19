@@ -14,6 +14,9 @@
 @interface HomeViewController : UIViewController
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (nonatomic) NSMutableArray<Event *> *events;
+@property (nonatomic) NSDateFormatter* timeFormatter;
+@property (nonatomic) NSInteger* inviteCount;
+@property (nonatomic) NSInteger* commitmentCount;
 @property (weak, nonatomic) IBOutlet UILabel *eventName;
 @property (weak, nonatomic) IBOutlet UILabel *eventDate;
 @property (weak, nonatomic) IBOutlet UILabel *eventLocation;
