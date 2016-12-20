@@ -60,9 +60,15 @@
                 }
             }
             
-            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): %@ ", e.getDateAndTimeForUI, e.location, e.guests];
-            
+            // Set the cell text.
+            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): ", e.getDateAndTimeForUI, e.location];
+            for(id Guest in e.guests) {
+                if([Guest isKindOfClass:NSString.class]) {
+                    cellText = [[cellText stringByAppendingString:Guest] stringByAppendingString:@", "];
+                }
+            }
             [e setCellText:cellText];
+            
             NSLog(@"PD8  capturing event: %@", e.cellText);
             if([e.date timeIntervalSinceNow] > -3600.0) {
                 [self.events addObject:e];

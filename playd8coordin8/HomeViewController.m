@@ -54,7 +54,7 @@
     // Get all the Events from the database.
     [eventRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSLog(@"PD8 OBSERVING DATABASE");
-        self.events = [[NSMutableArray alloc] init];
+        [self.events removeAllObjects];
         for(FIRDataSnapshot* child in snapshot.children) {
             NSLog(@"PD8 CHILD FOUND");
             // child = event object in database.
@@ -66,13 +66,15 @@
             [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
             
+            
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
-                [[e guests] addObject:[guest value]];
+                [e addGuest:guest.value];
             }
             
             // Determine if the current user is attending.
             [e setIsAttending:@NO];
+            
             for (id Guest in e.guests) {
                 if([Guest isKindOfClass:NSString.class]) {
                     FIRUser *user = [FIRAuth auth].currentUser;
@@ -87,7 +89,7 @@
                 [self.events addObject: e];
             }
         }
-        if([self.events count] > 0){
+        if([self.events count] > 0) {
             NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:TRUE];
             [_events sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
             
@@ -96,15 +98,15 @@
             _eventDate.text = currentEvent.getDateAndTimeForUI;
             _eventLocation.text = currentEvent.location;
             NSMutableString* guestList = [[NSMutableString alloc] initWithFormat:@""];
-            for(int i = 0; i < currentEvent.guests.count; i++){
+            for(int i = 0; i < currentEvent.guests.count; i++) {
                 [guestList appendString: currentEvent.guests[i]];
             }
             _eventGuests.text = guestList;
         }
 
+        // Determine the number of events attending / not attending
         self.inviteCount = 0;
         self.commitmentCount = 0;
-        
         for (int i = 0; i < self.events.count; i++) {
             if([self.events[i].isAttending isEqual: @YES]) {
                 self.commitmentCount++;
@@ -112,7 +114,7 @@
                 self.inviteCount++;
             }
         }
-        
+        // Update the UI
         NSString *inviteCountString = [[NSString alloc] initWithFormat:@"You have %lu pending invites.", (unsigned long)self.inviteCount];
         _pendingInvitesLabel.text = inviteCountString;
         NSString *commitmentCountString = [[NSString alloc] initWithFormat:@"You have %lu upcoming events", self.commitmentCount];
