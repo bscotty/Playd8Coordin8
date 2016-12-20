@@ -44,16 +44,20 @@
             [e setName:[[child childSnapshotForPath:@"name"] value]];
             [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
-            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
-                [e setIsAttending: @YES];
-            }
-            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
-                [e setIsAttending: @NO];
-            }
             
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [e addGuest:guest.value];
+            }
+            // Determine if the current user is attending.
+            [e setIsAttending:@NO];
+            for (id Guest in e.guests) {
+                if([Guest isKindOfClass:NSString.class]) {
+                    FIRUser *user = [FIRAuth auth].currentUser;
+                    if([Guest isEqualToString:user.displayName]) {
+                        [e setIsAttending:@YES];
+                    }
+                }
             }
             
             NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): %@ ", e.getDateAndTimeForUI, e.location, e.guests];
@@ -106,6 +110,10 @@
                                  style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                    e.isAttending = @YES;
+                                   FIRUser *user = [FIRAuth auth].currentUser;
+                                   if(![e.guests containsObject:user.displayName]) {
+                                       [e addGuest:user.displayName];
+                                   }
                                    [self updateFirebaseWithEvent:e];
                                }];
         // Setup the Do Not Attend action,
@@ -114,6 +122,10 @@
                                  style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                    e.isAttending = @NO;
+                                   FIRUser *user = [FIRAuth auth].currentUser;
+                                   if([e.guests containsObject:user.displayName]) {
+                                       [e.guests removeObject:user.displayName];
+                                   }
                                    [self updateFirebaseWithEvent:e];
                                }];
         
@@ -135,6 +147,7 @@
     
     NSDictionary *childUpdates = @{[@"/events/" stringByAppendingString:event.key]: post};
     [_ref updateChildValues:childUpdates];
+    [self.eventTableView reloadData];
     
 }
 
@@ -183,9 +196,9 @@
     cell.detailTextLabel.text = event.cellText;
     
     if([_events[indexPath.row].isAttending isEqual: @YES]) {
-        cell.backgroundColor = [UIColor greenColor];
+        cell.backgroundColor = [UIColor colorWithRed:0.436 green:0.764 blue:0.608 alpha:1.0];
     } else {
-        cell.backgroundColor = [UIColor redColor];
+        cell.backgroundColor = [UIColor colorWithRed:0.948 green:0.588 blue:0.588 alpha:1.0];
     }
     
     return cell;

@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.ref = [[FIRDatabase database] reference];
     self.events = [[NSMutableArray alloc] init];
     //load an array with 3> upcoming events and "your" events from database into array
     if([[FIRAuth auth] currentUser]){
@@ -27,8 +28,14 @@
         NSString *name = user.displayName;
         NSString *welcomeText = [[NSString alloc] initWithFormat:@"Welcome %@", name];
         _welcomeLabel.text = welcomeText;
+        
+        // Update the user's name in the database.
+        NSDictionary* usernameUpdate = @{[[@"/users/" stringByAppendingString:user.uid] stringByAppendingString:@"/username/"]:
+                                             [user displayName]};
+        [_ref updateChildValues:usernameUpdate];
     }
     
+    // Initialize some UI Objects for the current date and time.
     NSDate *date = [[NSDate alloc] init];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterLongStyle;
@@ -40,10 +47,11 @@
     _currentTimeLabel.text = timeString;
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(UpdateTime:) userInfo:nil repeats:YES];
     
-    self.ref = [[FIRDatabase database] reference];
+    // Setup the Observation Event.
     FIRDatabaseReference *eventRef = [_ref child:@"events"];
-    NSLog(@"PD8 We made it past the references and are waiting on the observation event.");
+    NSLog(@"PD8 We made it past the references and are waiting on the observation event."); /* Debug */
     
+    // Get all the Events from the database.
     [eventRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSLog(@"PD8 OBSERVING DATABASE");
         for(FIRDataSnapshot* child in snapshot.children) {
@@ -57,18 +65,22 @@
             [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
             
-            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
-                [e setIsAttending: @YES];
-            }
-            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
-                [e setIsAttending: @NO];
-            }
-            
-            
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [[e guests] addObject:[guest value]];
             }
+            
+            // Determine if the current user is attending.
+            [e setIsAttending:@NO];
+            for (id Guest in e.guests) {
+                if([Guest isKindOfClass:NSString.class]) {
+                    FIRUser *user = [FIRAuth auth].currentUser;
+                    if([Guest isEqualToString:user.displayName]) {
+                        [e setIsAttending:@YES];
+                    }
+                }
+            }
+            
             // If the event has already passed, don't add it to our events.
             if([e.date timeIntervalSinceNow] > -3600.0) {
                 [self.events addObject: e];

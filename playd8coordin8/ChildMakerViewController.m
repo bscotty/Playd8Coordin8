@@ -32,7 +32,7 @@
     FIRDatabaseReference *ref = [[FIRDatabase database] reference];
     FIRUser *user = [FIRAuth auth].currentUser;
     
-    FIRDatabaseReference *userData = [[ref child:@"users"] child:user.uid];
+    FIRDatabaseReference *userData = [[[ref child:@"users"] child:user.uid] child:@"children"];
     
     NSString *key = [userData childByAutoId].key;
     
@@ -41,7 +41,7 @@
                             @"bio": _childBio.text,
                            @"type": _childType.text};
     
-    NSDictionary *childUpdates = @{[[[@"/users/" stringByAppendingString:user.uid] stringByAppendingString:@"/"] stringByAppendingString:key]: post};
+    NSDictionary *childUpdates = @{[[[@"/users/" stringByAppendingString:user.uid] stringByAppendingString:@"/children/"] stringByAppendingString:key]: post};
     [ref updateChildValues:childUpdates];
     
     // Reset the text fields.

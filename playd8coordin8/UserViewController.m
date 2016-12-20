@@ -40,14 +40,14 @@
     FIRDatabaseReference *ref = [[FIRDatabase database] reference];
     FIRUser *user = [FIRAuth auth].currentUser;
     
-    FIRDatabaseReference *userData = [[ref child:@"users"] child:user.uid];
+    FIRDatabaseReference *userData = [[[ref child:@"users"] child:user.uid] child:@"children"];
     
     NSLog(@"PD8 getting children of user");
     
     [userData observeEventType: FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *_Nonnull snapshot){
         NSLog(@"PD8 OBSERVING USERDATA DB");
         self.children = [[NSMutableArray alloc] init];
-        for(FIRDataSnapshot* child in snapshot.children){
+        for(FIRDataSnapshot* child in snapshot.children) {
             //create a new child
             Child* c = [[Child alloc] init];
             

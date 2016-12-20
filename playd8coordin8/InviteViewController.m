@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     // Handle Table View Information
     self.inviteTable.dataSource = self;
     self.inviteTable.delegate = self;
@@ -42,19 +40,30 @@
             [e setName:[[child childSnapshotForPath:@"name"] value]];
             [e setDateFromFormattedString:[[child childSnapshotForPath:@"date"] value]];
             [e setLocation:[[child childSnapshotForPath:@"location"] value]];
-            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @1]){
-                [e setIsAttending: @YES];
-            }
-            if([[[child childSnapshotForPath:@"attending"] value] isEqual: @0]){
-                [e setIsAttending: @NO];
-            }
             
             // Get the guests.
             for(FIRDataSnapshot *guest in [[child childSnapshotForPath:@"guests"] children]) {
                 [e addGuest:guest.value];
             }
             
-            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): %@ ", e.getDateAndTimeForUI, e.location, e.guests];
+            // Determine if we're attending the event.
+            [e setIsAttending:@NO];
+            for (id Guest in e.guests) {
+                if([Guest isKindOfClass:NSString.class]) {
+                    FIRUser *user = [FIRAuth auth].currentUser;
+                    if([Guest isEqualToString:user.displayName]) {
+                        [e setIsAttending:@YES];
+                    }
+                }
+            }
+            
+            // Set the cell text.
+            NSString * cellText = [[NSString alloc] initWithFormat:@"On %@ at %@ place with friend(s): ", e.getDateAndTimeForUI, e.location];
+            for(id Guest in e.guests) {
+                if([Guest isKindOfClass:NSString.class]) {
+                    cellText = [[cellText stringByAppendingString:Guest] stringByAppendingString:@", "];
+                }
+            }
             
             [e setCellText:cellText];
             NSLog(@"PD8  capturing event: %@", e.cellText);
@@ -101,6 +110,10 @@
                                  style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                    e.isAttending = @YES;
+                                   FIRUser *user = [FIRAuth auth].currentUser;
+                                   if(![e.guests containsObject:user.displayName]) {
+                                       [e addGuest:user.displayName];
+                                   }
                                    [self updateFirebaseWithEvent:e];
                                }];
         // Setup the Do Not Attend action,
@@ -109,6 +122,10 @@
                                  style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                    e.isAttending = @NO;
+                                   FIRUser *user = [FIRAuth auth].currentUser;
+                                   if([e.guests containsObject:user.displayName]) {
+                                       [e.guests removeObject:user.displayName];
+                                   }
                                    [self updateFirebaseWithEvent:e];
                                }];
         
@@ -130,7 +147,7 @@
     
     NSDictionary *childUpdates = @{[@"/events/" stringByAppendingString:event.key]: post};
     [_ref updateChildValues:childUpdates];
-    
+    [self.inviteTable reloadData];
 }
 
 
