@@ -54,6 +54,7 @@
     // Get all the Events from the database.
     [eventRef observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSLog(@"PD8 OBSERVING DATABASE");
+        self.events = [[NSMutableArray alloc] init];
         for(FIRDataSnapshot* child in snapshot.children) {
             NSLog(@"PD8 CHILD FOUND");
             // child = event object in database.
